@@ -6,15 +6,20 @@ class singUpclient extends React.Component {
         return (
 
             <div>
-
-<NavLink to="signUpclient"> 
-      <button>
-        next5
+                <input />
+                <input />
+                <input />
+                <input />
+                <input />
+                <input />
+                <NavLink to="signUpclient">
+                    <button>
+                        next5
       </button>
-      </NavLink>
-          
-                
-</div>
+                </NavLink>
+
+
+            </div>
 
         )
 

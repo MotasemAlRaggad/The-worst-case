@@ -2,11 +2,14 @@ import React from 'react';
 // import logo from './logo.svg';
 // import { NavLink } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
-import HomePage from "./componant/HomePage"
-import signIn from "./componant/signIn"
-import signInClient from "./componant/signInClient"
-import signUp from "./componant/signUp"
-import signUpclient from "./componant/signUpClient"
+import HomePage from "./componant/HomePage";
+import signIn from "./componant/signIn";
+import signInClient from "./componant/signInClient";
+import signUp from "./componant/signUp";
+import signUpclient from "./componant/signUpClient";
+import Header from "./componant/Header";
+import footer from "./componant/footer";
+import lowaer from "./componant/lowaer";
 import './App.css';
 
 class App extends React.Component {
@@ -35,9 +38,9 @@ class App extends React.Component {
 
 
      
-
-      
-
+      <Route path="/lowaer" component={lowaer} />
+      <Route path="/footer" component={footer} />
+      <Route path="/Header" component={Header} />
       <Route path="/HomePage" component={HomePage} />
       <Route path="/signIn" component={signIn} />
       <Route path="/signInClient" component={signInClient} />

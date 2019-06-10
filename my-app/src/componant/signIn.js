@@ -6,11 +6,13 @@ class signIn extends React.Component {
     render() {
 
         return (
-
             <div>
-               <NavLink to="signInClient"> 
+            <input   />
+            <input   />
+           
+               <NavLink to="signUp"> 
       <button>
-        next2
+      signUp
       </button>
       </NavLink>
 

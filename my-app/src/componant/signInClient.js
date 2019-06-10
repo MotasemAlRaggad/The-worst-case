@@ -4,20 +4,29 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 class singInClient extends React.Component {
 
 
-    render() {
+  render() {
 
-        return (
-            <div>
-              <NavLink to="signUp"> 
-      <button>
-        next3
+    return (
+      <div>
+
+        <input />
+        <input />
+        <NavLink to="lowaer">
+          <button>
+            singInClient
+            </button>
+        </NavLink>
+
+        <NavLink to="signUpClient">
+          <button>
+            signUpClient
       </button>
-      </NavLink>
-      
-</div>
+        </NavLink>
 
-        )
-    }
+      </div>
+
+    )
+  }
 
 }
 
