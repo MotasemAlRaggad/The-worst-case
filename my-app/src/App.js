@@ -14,11 +14,17 @@ import './App.css';
 
 class App extends React.Component {
 
-
+  onclick(){
+    console.log("deasglkmnwsljkhn")
+    fetch("http://localhost:5000")
+  }
   
   
   render () {
   return (
+<div>
+    <div> <button onClick={this.onclick.bind(this)}> go
+      </button></div>
     <Router>
 
 
@@ -48,6 +54,7 @@ class App extends React.Component {
       <Route path="/signUpclient" component={signUpclient} />
 
     </Router>
+    </div>
   );
 }
 }
