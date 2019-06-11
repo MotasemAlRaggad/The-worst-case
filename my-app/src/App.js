@@ -23,12 +23,15 @@ class App extends React.Component {
   render () {
   return (
 <div>
-    <div> <button onClick={this.onclick.bind(this)}> go
-      </button></div>
+    {/* <div> <button onClick={this.onclick.bind(this)}> go
+      </button></div> */}
     <Router>
 
 
-
+    <NavLink to="lowaer"> 
+    <button onClick={this.onclick.bind(this)}> go
+      </button>
+      </NavLink>
        
       
 

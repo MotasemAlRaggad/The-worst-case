@@ -1,4 +1,5 @@
 const express = require ("express");
+const bodyParser = require('body-parser'); 
  const app = express();
  
  
@@ -9,7 +10,12 @@ const express = require ("express");
          {raggad :"motasem"}
      ];
      res.json(motasem);
+}); 
+app.post("/signUp", (req,res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+res.send("hi")
 });
-;const port = 5000;
+const port = 5000;
 
 app.listen(port, () => console.log("raggad"));
