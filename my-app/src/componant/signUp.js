@@ -4,14 +4,15 @@ class signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-         motasem:[]
+            motasem: []
         }
     }
-    componentDidMount () {
-        fetch("/signUp")
-        .then(res => res.json())
-        .then(motasem => this.setState({motasem},() => console.log("raggad111",motasem)))
-    }
+    onclick(){
+        console.log("nhy")
+        fetch("http://localhost:5000")
+      }
+      
+    
 
     render() {
 
@@ -25,7 +26,7 @@ class signup extends React.Component {
 
 
                 <NavLink to="signUp">
-                    <button>
+                    <button button onClick={this.onclick.bind(this)}>
                         signUp
       </button>
                 </NavLink>
@@ -38,4 +39,4 @@ class signup extends React.Component {
 
 }
 
-export default signup
+export default signup;

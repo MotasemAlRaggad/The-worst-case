@@ -18,20 +18,21 @@ class App extends React.Component {
     console.log("deasglkmnwsljkhn")
     fetch("http://localhost:5000")
   }
+   
   
   
   render () {
   return (
 <div>
-    {/* <div> <button onClick={this.onclick.bind(this)}> go
-      </button></div> */}
+    <div> <button onClick={this.onclick.bind(this)}> go
+      </button></div>
     <Router>
 
 
-    <NavLink to="lowaer"> 
+    {/* <NavLink to="lowaer"> 
     <button onClick={this.onclick.bind(this)}> go
       </button>
-      </NavLink>
+      </NavLink> */}
        
       
 
