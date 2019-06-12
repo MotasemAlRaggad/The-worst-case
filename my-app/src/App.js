@@ -36,9 +36,7 @@ class App extends React.Component {
       </button>
       </NavLink> */}
 
-          <NavLink to="HomePage">
-            <button>Home</button>
-          </NavLink>
+          
 
           <Route path="/lowaer" component={lowaer} />
           <Route path="/footer" component={footer} />
