@@ -7,22 +7,20 @@ class Home extends React.Component {
     render() {
         return (
             <div> 
+
+              
 <section className="header-top d-none d-sm-block">
     <div className="container">
       <div className="d-sm-flex justify-content-between">
         <ul className="header-top__info mb-2 mb-sm-0">
-          <li><a href="tel:+01432152323"><span className="align-middle"><i className="ti-mobile"></i></span>+014 321 523 23</a></li>
-          <li><a href="mailto:info@example.com"><span className="align-middle"><i className="ti-email"></i></span>Info@example.com</a></li>
+          <li><a href="0780437773"><span className="align-middle"><i className="ti-mobile"></i></span>0780437773</a></li>
+          <li><a href="motasem6236@gmai.com"><span className="align-middle"><i className="ti-email"></i></span>motasem6236@gmai.com</a></li>
         </ul>
-        <ul className="header-top__social">
-          <li><a href="#"><i className="ti-facebook"></i></a></li>
-          <li><a href="#"><i className="ti-twitter-alt"></i></a></li>
-          <li><a href="#"><i className="ti-instagram"></i></a></li>
-          <li><a href="#"><i className="ti-skype"></i></a></li>
-        </ul>
+       
       </div>
     </div>
   </section>
+ 
             
             
                  <NavLink to="/signIn"><button>
@@ -30,6 +28,9 @@ class Home extends React.Component {
           </button>
 
             </NavLink>
+            <NavLink to="HomePage">
+            <button>Home</button>
+          </NavLink>
 
                 <NavLink to="/signInClient"><button>
                     signInClient
