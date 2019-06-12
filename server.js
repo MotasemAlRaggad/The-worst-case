@@ -1,7 +1,7 @@
 const express = require ("express");
 const bodyParser = require('body-parser'); 
  const app = express();
- 
+ const port = 5000;
  app.use(express.static(__dirname + '/../react-client/dist'));
 
  app.get("/", (req,res) => {
@@ -11,11 +11,19 @@ const bodyParser = require('body-parser');
      ];
      res.json(motasem);
 }); 
-app.post("/signUp", (req,res) => {
-    const email = req.body.email;
+app.post('/signUp', function(req, res) {
+    const username = req.body.username;
     const password = req.body.password;
-res.send("hi")
+    //Check if user exists in the database
+    User.findOne({where: {username: username}}).then(function(user){
+       
+      
+      
+    });
+    
 });
-const port = 5000;
+       
+    
+
 
 app.listen(port, () => console.log("raggad"));

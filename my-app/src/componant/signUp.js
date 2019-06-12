@@ -4,14 +4,14 @@ class signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            motasem: []
+           
         }
     }
     onclick(){
         console.log("nhy")
         fetch("http://localhost:5000")
       }
-      
+
     
 
     render() {
