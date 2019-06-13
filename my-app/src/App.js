@@ -41,7 +41,7 @@ class App extends React.Component {
           <Route path="/lowaer" component={lowaer} />
           <Route path="/footer" component={footer} />
           <Route path="/Header" component={Header} />
-          <Route path="/HomePage" component={HomePage} />
+          <Route path="/" component={HomePage} />
           <Route path="/signIn" component={signIn} />
           <Route path="/signInClient" component={signInClient} />
           <Route path="/signUp" component={signUp} />

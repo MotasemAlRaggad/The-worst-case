@@ -1,20 +1,20 @@
-var mysql = require('mysql');
-
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'FILL_ME_IN',
-  database : 'test'
+const mongoose = require('mongoose');
+// const Schema = mongoose.Schema;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("We're connected! ^-^");
 });
+const User = mongoose.Schema({
+  username: {
+    type: String
+  },
+ password: {
+      type: String
+  }
+},{
+    collection: 'users'
+});
+// let Repo = mongoose.model('Repo', User);
 
-var selectAll = function(callback) {
-  connection.query('SELECT * FROM connection', function(err, results, fields) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, results);
-    }
-  });
-};
-
-module.exports.selectAll = selectAll;
+module.exports = mongoose.model('User', User);
