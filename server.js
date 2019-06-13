@@ -20,15 +20,27 @@ app.get("/", (req, res) => {
   const motasem = [{ raggad: "motasem" }];
 
   res.json(motasem);
+  
 });
 
 app.post("/signUp", (req, res) => {
-  let username = req.body.username;
+  
+let username = req.body.username;
   let password = req.body.password;
-
   User.create({ username: username, password: password }).then(() => {
-    res.send({ done: "successful" });
+   
+   
+  //console.log(username)
+  
+  	
+  	
+    User.findOrCreate({ username:username , password: password }, function (err, user) {
+      return done(err, user);
+       
   });
+  res.send({ done: "successful" });
+  });
+
 });
 
 app.listen(PORT, () => {
