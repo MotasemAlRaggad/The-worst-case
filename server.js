@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const db = require('./my-app/database/db');
+const { User } = require("./my-app/database/db");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/a", (req, res) => {
   console.log("motasem raggad");
   const motasem = [{ raggad: "motasem" }];
 
@@ -25,23 +26,18 @@ app.get("/", (req, res) => {
 
 app.post("/signUp", (req, res) => {
   
-let username = req.body.username;
-  let password = req.body.password;
-  User.create({ username: username, password: password }).then(() => {
-   
-   
-  //console.log(username)
-  
-  	
-  	
-    User.findOrCreate({ username:username , password: password }, function (err, user) {
-      return done(err, user);
-       
-  });
-  res.send({ done: "successful" });
-  });
 
-});
+    const username = req.body.username;
+    const password = req.body.password;
+    //Check if user exists in the database
+    User.findOne({username: username})
+        res.send("raggad")
+      
+    
+    });
+    
+
+
 
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
