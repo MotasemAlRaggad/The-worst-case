@@ -6,7 +6,7 @@ class lowaer extends React.Component {
         return (
 
             <div>
-                              <section className="header-top d-none d-sm-block">
+                              {/* <section className="header-top d-none d-sm-block">
     <div className="container">
       <div className="d-sm-flex justify-content-between">
         <ul className="header-top__info mb-2 mb-sm-0">
@@ -16,9 +16,9 @@ class lowaer extends React.Component {
       
       </div>
     </div>
-  </section>
+  </section> */}
               
-                <header class="header_area" >
+                {/* <header class="header_area" >
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
@@ -27,9 +27,9 @@ class lowaer extends React.Component {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> */}
 
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          {/* <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="HomePage">Home</a></li> 
               <li class="nav-item"><a class="nav-link" href="signInClient">signInClient</a></li> 
@@ -48,9 +48,9 @@ class lowaer extends React.Component {
         </div>
       </nav>
     </div>
-  </header>
+  </header> */}
   <img src="https://image.shutterstock.com/image-photo/symbol-law-justice-concept-260nw-140867215.jpg" alt="Italian Trulli"/>
-             <div>
+             {/* <div>
              <footer class="footer-area"/>
                <div class="container">
                  <div class="row">
@@ -122,21 +122,21 @@ class lowaer extends React.Component {
                <div class="footer-bottom">
                  <div class="container">
                    <div class="row align-items-center">
-                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left" />
+                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left" /> */}
            
            {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */} 
-                     <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+                     {/* <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                        <a href="#"><i class="fab fa-twitter"></i></a>
                        <a href="#"><i class="fab fa-dribbble"></i></a>
                        <a href="#"><i class="fab fa-behance"></i></a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               </div>
+                     </div> */}
+                   {/* </div> */}
+                 {/* </div> */}
+               {/* </div> */}
+               {/* </div> */}
                
  
             </div>

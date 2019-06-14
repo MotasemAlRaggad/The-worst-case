@@ -6,7 +6,7 @@ class singUpclient extends React.Component {
         return (
 
             <div>
-                 <header class="header_area" >
+                 {/* <header class="header_area" >
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
@@ -36,7 +36,7 @@ class singUpclient extends React.Component {
         </div>
       </nav>
     </div>
-  </header>
+  </header> */}
                 <input />
                 <input />
                 <input />

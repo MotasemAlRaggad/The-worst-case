@@ -12,8 +12,8 @@ import signIn from "./componant/signIn";
 import signInClient from "./componant/signInClient";
 import signUp from "./componant/signUp";
 import signUpclient from "./componant/signUpClient";
-import Header from "./componant/Header";
-import footer from "./componant/footer";
+// import Header from "./componant/Header";
+// import footer from "./componant/footer";
 import lowaer from "./componant/lowaer";
 import "./App.css";
 
@@ -39,8 +39,8 @@ class App extends React.Component {
           
 
           <Route path="/lowaer" component={lowaer} />
-          <Route path="/footer" component={footer} />
-          <Route path="/Header" component={Header} />
+          {/* <Route path="/footer" component={footer} /> */}
+          {/* <Route path="/Header" component={Header} /> */}
           <Route path="/" component={HomePage} />
           <Route path="/signIn" component={signIn} />
           <Route path="/signInClient" component={signInClient} />

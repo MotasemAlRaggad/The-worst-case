@@ -9,7 +9,10 @@ class Home extends React.Component {
             <div> 
 
               
-<section className="header-top d-none d-sm-block">
+
+
+              
+{/* <section className="header-top d-none d-sm-block">
     <div className="container">
       <div className="d-sm-flex justify-content-between">
         <ul className="header-top__info mb-2 mb-sm-0">
@@ -19,25 +22,14 @@ class Home extends React.Component {
        
       </div>
     </div>
-  </section>
+  </section> */}
  
             
             
-                 <NavLink to="/signIn"><button>
-                signIn
-          </button>
+            
 
-            </NavLink>
-            <NavLink to="HomePage">
-            <button>Home</button>
-          </NavLink>
-
-                <NavLink to="/signInClient"><button>
-                    signInClient
-</button>
-
-                </NavLink>
-                <header class="header_area" >
+                
+                {/* <header class="header_area" >
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
@@ -67,9 +59,24 @@ class Home extends React.Component {
         </div>
       </nav>
     </div>
-  </header>
+  </header> */}
+
+  <NavLink to="/signIn"><button>
+                signIn
+          </button>
+
+            </NavLink>
+            <NavLink to="/">
+            <button>Home</button>
+          </NavLink>
+
+                <NavLink to="/signInClient"><button>
+                    signInClient
+</button>
+
+                </NavLink>
              <div>
-             <footer class="footer-area"/>
+             {/* <footer class="footer-area"/>
                <div class="container">
                  <div class="row">
                    <div class="col-lg-3  col-md-6 col-sm-6">
@@ -135,25 +142,25 @@ class Home extends React.Component {
                          </div>
                      </div>
                    </div>						
-                 </div>
+                 </div> */}
                
-               <div class="footer-bottom">
+               {/* <div class="footer-bottom">
                  <div class="container">
                    <div class="row align-items-center">
-                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left" />
+                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left" /> */}
            
            {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */} 
-                     <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+                     {/* <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                        <a href="#"><i class="fab fa-twitter"></i></a>
                        <a href="#"><i class="fab fa-dribbble"></i></a>
                        <a href="#"><i class="fab fa-behance"></i></a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
+                     </div> */}
+                   {/* </div> */}
+                 {/* </div> */}
+               {/* </div> */}
                </div>
                </div>
 

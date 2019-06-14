@@ -6,152 +6,160 @@ import {
   // Link,
   NavLink
 } from "react-router-dom";
+
+
 class signIn extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props){
+    super(props)
+  
     this.state = {
-      username: "",
-      password: ""
-    };
+       shops : [{
+        shopname:"",
+        shoplocation:"",
+        workkinghour:"",
+        phoneNumber : "" 
+
+       }]
+    }
   }
-  onChange = event => {
-    this.setState(
-      { [event.target.username]: event.target.value },
-      { [event.target.password]: event.target.value }
-    );
-  };
+componentWillMount(){
+  this.getInfo();
+}
+  getInfo() {
 
+    // event.preventDefault();
+
+     return fetch('/singIn', {
+      method: 'GET',
+      headers: { "Content-Type": "application/json" }
+    }).then(response => response.json())
+      .then(newData => {
+        console.log(newData)
+        this.setState({shops: newData})});
+
+  }
   render() {
+    
+ 
     return (
-      <div>
-        <div>
-          <h1>Sign In</h1>
-          <input
-            type="text"
-            placeholder="username"
-            value={this.props.username}
-            // onChange={event => this.props.onChange(event)}
-            name="username"
-          />
-          <input
-            type="text"
-            placeholder="password"
-            value={this.props.password}
-            // onChange={event => this.props.onChange(event)}
-            name="password"
-          />
-          <button onClick={this.onChange.bind(this)}>Sign In</button>
-        </div>
+        <div >
+      
+    {this.state.shops.map(shop => <div>{shop.shopname }<br></br>{shop.shoplocation}<br></br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
+      
+      </div>
+ 
 
-        <div>
-          <section className="header-top d-none d-sm-block">
-            <div className="container">
-              <div className="d-sm-flex justify-content-between">
-                <ul className="header-top__info mb-2 mb-sm-0">
-                  <li>
-                    <a href="tel:+01432152323">
-                      <span className="align-middle">
-                        <i className="ti-mobile" />
-                      </span>
-                      0780437773
-                    </a>
-                  </li>
-                  <li>
-                    <a href="motasem6236@gmail.com">
-                      <span className="align-middle">
-                        <i className="ti-email" />
-                      </span>
-                      motasem6236@gmail.com
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
 
-          <header class="header_area">
-            <div class="main_menu">
-              <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container box_1620">
-                  <a class="navbar-brand logo_h" href="index.html">
-                    <img src="img/logo.png" alt="" />
-                  </a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="icon-bar" />
-                    <span class="icon-bar" />
-                    <span class="icon-bar" />
-                  </button>
 
-                  <div
-                    class="collapse navbar-collapse offset"
-                    id="navbarSupportedContent"
-                  >
-                    <ul class="nav navbar-nav menu_nav justify-content-end">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="HomePage">
-                          Home
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="signInClient">
-                          signInClient
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="services.html">
-                          Services
-                        </a>
-                        <li class="nav-item submenu dropdown">
-                          <a
-                            href="#"
-                            class="nav-link dropdown-toggle"
-                            data-toggle="dropdown"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Pages
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li class="nav-item">
-                              <a class="nav-link" href="blog.html">
-                                Blog
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="blog-details.html">
-                                Blog Details
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="nav-item" />
-                        <a class="nav-link" href="contact.html">
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </header>
-          <input />
-          <input />
+        // {/* <div>
+          // <section className="header-top d-none d-sm-block">
+          //   <div className="container">
+          //     <div className="d-sm-flex justify-content-between">
+          //       <ul className="header-top__info mb-2 mb-sm-0">
+          //         <li>
+          //           <a href="tel:+01432152323">
+          //             <span className="align-middle">
+          //               <i className="ti-mobile" />
+          //             </span>
+          //             0780437773
+          //           </a>
+          //         </li>
+          //         <li>
+          //           <a href="motasem6236@gmail.com">
+          //             <span className="align-middle">
+          //               <i className="ti-email" />
+          //             </span>
+          //             motasem6236@gmail.com
+          //           </a>
+          //         </li>
+          //       </ul>
+          //     </div>
+          //   </div>
+          // </section>
 
-          <NavLink to="signUp">
-            <button>signUp</button>
-          </NavLink>
+          // <header class="header_area">
+          //   <div class="main_menu">
+          //     <nav class="navbar navbar-expand-lg navbar-light">
+          //       <div class="container box_1620">
+          //         <a class="navbar-brand logo_h" href="index.html">
+          //           <img src="img/logo.png" alt="" />
+          //         </a>
+          //         <button
+          //           class="navbar-toggler"
+          //           type="button"
+          //           data-toggle="collapse"
+          //           data-target="#navbarSupportedContent"
+          //           aria-controls="navbarSupportedContent"
+          //           aria-expanded="false"
+          //           aria-label="Toggle navigation"
+          //         >
+          //           <span class="icon-bar" />
+          //           <span class="icon-bar" />
+          //           <span class="icon-bar" />
+          //         </button>
 
-          <div>
+          //         <div
+          //           class="collapse navbar-collapse offset"
+          //           id="navbarSupportedContent"
+          //         >
+          //           <ul class="nav navbar-nav menu_nav justify-content-end">
+          //             <li class="nav-item active">
+          //               <a class="nav-link" href="HomePage">
+          //                 Home
+          //               </a>
+          //             </li>
+          //             <li class="nav-item">
+          //               <a class="nav-link" href="signInClient">
+          //                 signInClient
+          //               </a>
+          //             </li>
+          //             <li class="nav-item">
+          //               <a class="nav-link" href="services.html">
+          //                 Services
+          //               </a>
+          //               <li class="nav-item submenu dropdown">
+          //                 <a
+          //                   href="#"
+          //                   class="nav-link dropdown-toggle"
+          //                   data-toggle="dropdown"
+          //                   role="button"
+          //                   aria-haspopup="true"
+          //                   aria-expanded="false"
+          //                 >
+          //                   Pages
+          //                 </a>
+          //                 <ul class="dropdown-menu">
+          //                   <li class="nav-item">
+          //                     <a class="nav-link" href="blog.html">
+          //                       Blog
+          //                     </a>
+          //                   </li>
+          //                   <li class="nav-item">
+          //                     <a class="nav-link" href="blog-details.html">
+          //                       Blog Details
+          //                     </a>
+          //                   </li>
+          //                 </ul>
+          //               </li>
+          //               <li class="nav-item" />
+          //               <a class="nav-link" href="contact.html">
+          //                 Contact
+          //               </a>
+          //             </li>
+          //           </ul>
+          //         </div>
+          //       </div>
+          //     </nav>
+          //   </div> 
+          // </header>
+          // <input />
+          // <input />
+
+          // <NavLink to="signUp">
+          //   <button>signUp</button>
+          // </NavLink>
+
+          /* <div>
             <footer class="footer-area" />
             <div class="container">
               <div class="row">
@@ -276,8 +284,8 @@ class signIn extends React.Component {
 
                   {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-                  <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */
+                  /* <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
                     <a href="#">
                       <i class="fab fa-facebook-f" />
                     </a>
@@ -294,9 +302,10 @@ class signIn extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> */
+        // </div> */}
+      
+    
     );
   }
 }

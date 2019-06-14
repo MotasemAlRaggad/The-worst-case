@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const db = require('./my-app/database/db');
-const { User } = require("./my-app/database/db");
+const { users ,shop } = require("./my-app/database/db");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -24,7 +24,7 @@ app.get("/a", (req, res) => {
   
 });
 
-app.post("/signUp", (req, res) => {
+app.post("/", (req, res) => {
   
 
     const username = req.body.username;
@@ -35,9 +35,44 @@ app.post("/signUp", (req, res) => {
       
     
     });
-    
+    app.get('/signIn', function(req, res) {
+      // const user = req.body.user; //Added by authenticate function 
+      shop.find({}).then((shops) => {
+          return res.send( shops)
+          .catch(function(err){
+            return res.send({error: 'Server Error'});
+        })
+      
+      });
+        });
+        app.post('/singInClient', (req, res) => {
 
-
+          console.log("dddddddddd\n\n\n\n\n\n\n",req.body, "\n\n\n\n\n\n\n ddddddddddddd")
+          const shopname = req.body.shopname;
+          const shoplocation = req.body.shoplocation;
+          const workkinghour = req.body.workkinghour;
+          const specialties = req.body.specialties;
+          const phoneNumber = req.body.phoneNumber;
+        
+          shop.findOne({ phoneNumber: phoneNumber }).then((data) => {
+            if (data) {
+              console.log("already registered")
+              return res.send("phoneNumber is already taken!, Please sign up using another phoneNumber.")
+            } else {
+              shop.create({
+                shopname: shopname,
+                shoplocation: shoplocation,
+                workkinghour: workkinghour,
+                specialties: specialties,
+                phoneNumber: phoneNumber
+              })
+                .then((ress) => {
+                  console.log(ress)
+                  return res.send({ done: "Signed up successfully" })
+                })
+            }
+          })
+        });
 
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
