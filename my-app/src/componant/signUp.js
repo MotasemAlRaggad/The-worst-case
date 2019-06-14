@@ -1,76 +1,80 @@
-
-
-
 import React from "react";
 
-
-
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
+import {
+  BrowserRouter as 
+  // Router,
+  // Route,
+  // Link,
+  NavLink
+} from "react-router-dom";
 
 class signUp extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
-      phone: ''
-    }
+      username: "",
+      password: ""
+    };
   }
 
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+  onChange = e => {
+    this.setState(
+      { [e.target.username]: e.target.value },
+      { [e.target.password]: e.target.value }
+    );
+  };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     // get form data out of state
-    const { first_name, last_name, password, email, phone } = this.state;
+    const { username, password } = this.state;
 
-    fetch('http://localhost:5000' , {
+    fetch("", {
       method: "POST",
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": "application/json"
       },
       body: JSON.stringify(this.state)
-    })
-    console.log("raggad")
-    .then((result) => result.json())
-    .then((info) => { console.log(info); })
- 
-}
+    });
+    console
+      .log("raggad")
+      .then(result => result.json())
+      .then(info => {
+        console.log(info);
+      });
+  };
 
-      render() {
-        const { classes } = this.props;
-        const { first_name, last_name, password, email, phone } = this.state;
-        return (
-          <div className="session">
-          <h1>Create your Account</h1>
-            <div className="register-form">
-              <form method='POST' action='http://localhost:5000'>
-                <input label="First Name" name="first_name" />
+  render() {
+    const { classes } = this.props;
+    const { first_name, last_name, password, email, phone } = this.state;
+    return (
+      <div className="session">
+        <h1>Create your Account</h1>
+        <div className="register-form">
+          <form method="POST" action="/signUp">
+            {/* <input label="First Name" name="first_name" />
                 <br/>
                 <input label="Last Name" name="last_name" />
-                <br/>
-                <input label="Email" name="email" />
-                <br/>
-                <input label="Password" name="password" />
-                <br/>    
-                <input label="Phone #" name="phone" />
-                <NavLink to="lowaer">                <button type='Submit' variant="contained" color="primary">
-                  signUp 
-                </button>
-                </NavLink>
+                <br/> */}
+            <input label="username" name="username" />
+            <br />
+            <input label="Password" name="password" />
+            <br />
+            {/* <input label="Phone #" name="phone" /> */}
+            <NavLink to="lowaer">
+              {" "}
+              <button type="Submit" variant="contained" color="primary">
+                signUp
+              </button>
+            </NavLink>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
 
-              </form>
-            </div>
-          </div>
-        );
-      };
-    }
-
-    export default signUp;
+export default signUp;
 // class signup extends React.Component {
 //   constructor(props) {
 //     super(props)
@@ -121,8 +125,8 @@ class signUp extends React.Component {
 
 //           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 //             <ul class="nav navbar-nav menu_nav justify-content-end">
-//               <li class="nav-item active"><a class="nav-link" href="HomePage">Home</a></li> 
-//               <li class="nav-item"><a class="nav-link" href="signInClient">signInClient</a></li> 
+//               <li class="nav-item active"><a class="nav-link" href="HomePage">Home</a></li>
+//               <li class="nav-item"><a class="nav-link" href="signInClient">signInClient</a></li>
 //               <li class="nav-item"><a class="nav-link" href="services.html">Services</a>
 //               <li class="nav-item submenu dropdown">
 //                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -134,7 +138,7 @@ class signUp extends React.Component {
 // 							</li>
 //               <li class="nav-item" /><a class="nav-link" href="contact.html" >Contact</a></li>
 //             </ul>
-//           </div> 
+//           </div>
 //         </div>
 //       </nav>
 //     </div>
@@ -143,14 +147,11 @@ class signUp extends React.Component {
 //                 <input />
 //                 <input />
 
-
-
 //                 <NavLink to="signUp">
 //                     <button type='Submit' variant="contained" color="primary">
 //                         signUp
 //       </button>
 //                 </NavLink>
-
 
 //             </div>
 

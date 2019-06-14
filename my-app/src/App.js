@@ -20,7 +20,7 @@ import "./App.css";
 class App extends React.Component {
   onclick() {
     console.log("deasglkmnwsljkhn");
-    fetch("http://localhost:5000");
+    fetch("/a");
   }
 
   render() {
