@@ -46,9 +46,11 @@ app.post("/reg-Shop", function(req, res) {
     password: password,
     id: id,
     phoneNumber: phoneNumber
-  }).then(()=>{
-    console.log("row created")
+  }).then((userrrr)=>{
+    console.log(userrrr)
+ res.send(userrrr)
   })
+  
 });
 
 
@@ -65,10 +67,14 @@ app.post("/reg-Shop", function(req, res) {
 
 
 app.get("/users",(req, res)=>{
+  
   var username = req.body.username;
-  Low.find({username: username}).then(function(){
-    console.log("row created222")
+  console.log(req.body)
+  Low.find({username: username}).then(function(user){
     
+    if(!user){
+      return res.send({error: 'Please sign up'}); 
+  }
 })
 })
 
