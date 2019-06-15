@@ -44,7 +44,7 @@ componentWillMount(){
     return (
         <div >
       
-    {this.state.shops.map(shop => <div>{shop.shopname }<br></br>{shop.shoplocation}<br></br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
+    {this.state.shops.map((shop,index) => <div key={index}>{shop.shopname }<br></br>{shop.shoplocation}<br></br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
       
       </div>
  

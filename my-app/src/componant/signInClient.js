@@ -28,7 +28,7 @@ class singInClient extends React.Component {
 
     event.preventDefault();
     const data = this.state
-    fetch('http://localhost:5000/singInClient', {
+    fetch('/singInClient', {
       method: 'post',
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
