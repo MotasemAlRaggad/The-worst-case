@@ -1,21 +1,21 @@
 const express = require("express");
-const mongoose = require('mongoose');
+
 const bodyParser = require("body-parser");
 const db = require('./my-app/database/db');
-const { users ,shop } = require("./my-app/database/db");
+const { users ,save } = require("./my-app/database/db");
 const app = express();
-const PORT = process.env.PORT || 8080;
-
+const PORT = process.env.PORT || 5000;
+const cors = require("cors")
 // const config = require('./my-app/database/db');
 
-mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true}) 
+
 //  .then(
 //   () => {console.log('Database is connected') },
 //   err => { console.log('Can not connect to the database'+ err)}
 // );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors())
 app.get("/a", (req, res) => {
   console.log("motasem raggad");
   const motasem = [{ raggad: "motasem" }];
@@ -36,7 +36,7 @@ app.post("/tgo", (req, res) => {
     
     });
 
-    app.get('/singInClient',  function(req, res) {
+    app.get('/signInClient',  function(req, res) {
       
       shop.findOne({}).then(function(shops){
           return res.send({shops: shops});
@@ -55,23 +55,18 @@ app.post("/tgo", (req, res) => {
     //   });
     //     });
 
-        app.post('/signIn', function(req, res) {
+        app.post('/signInClient', function(req, res) {
           console.log(req.body);
          
           const shopname = req.body.shopname;
           const shoplocation = req.body.shoplocation;
           const workkinghour = req.body.workkinghour;
-          // const specialties = req.body.specialties;
           const phoneNumber = req.body.phoneNumber;
+         console.log("PHHHHHONE",phoneNumber)
+          save({shopname: shopname, shoplocation: shoplocation, workkinghour: workkinghour, phoneNumber: phoneNumber},(err,ress)=>{
+            res.send(ress)
+          })
          
-          shop.create({shopname: shopname, shoplocation: shoplocation, workkinghour: workkinghour, phoneNumber: phoneNumber}).then(function(){
-              return res.send('Sign up successful');
-          }).catch(function(err){
-              if(err.code === 11000){
-                  return res.send('This username is already taken');
-              }
-              return res.send('Server Error');
-          });
       });
 
 

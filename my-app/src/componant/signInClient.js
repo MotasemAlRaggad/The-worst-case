@@ -8,7 +8,7 @@ class singInClient extends React.Component {
     super(props);
 
     this.state = {
-     
+      toggle1: false,
       shopname: "",
       shoplocation: "",
       workkinghour: "",
@@ -24,24 +24,25 @@ class singInClient extends React.Component {
   }
 
   click(event) {
-event.preventDefault();
-    const data = this.state
 
-    
-     fetch(" http://localhost:8080/singInClient", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    }).then(response => response.json(data))
-    
+
+    event.preventDefault();
+    const data = this.state
+    fetch('http://localhost:5000/signInClient', {
+            method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body:JSON.stringify(data)
+    })
+    .then(response => response.json()).then(res=>console.log("ressssss",res)).catch(err=>console.log("ERRR",err));
+    console.log(this.state);
 
   }
   render() {
-    
+    const { classes } = this.props;
     return (
-      <div >
+      <div className="form-style-7">
 
         <form >
           <body> <center>
@@ -86,7 +87,7 @@ event.preventDefault();
               type="text"
               placeholder="Working-Hour"
               name="workkinghour"
-              // autoComplete="workkinghour"
+              autoComplete="workkinghour"
               // margin="normal"
               // variant="filled"
               onChange={this.handleChange}

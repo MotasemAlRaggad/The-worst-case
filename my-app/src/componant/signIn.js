@@ -1,11 +1,11 @@
 import React from "react";
-import {
-  BrowserRouter as 
-  // Router,
-  // Route,
-  // Link,
-  NavLink
-} from "react-router-dom";
+// import {
+//   BrowserRouter as 
+//   // Router,
+//   // Route,
+//   // Link,
+//   NavLink
+// } from "react-router-dom";
 
 
 class signIn extends React.Component {
@@ -28,16 +28,17 @@ componentWillMount(){
   getInfo() {
 
     // event.preventDefault();
-
-    fetch(" http://localhost:8080/signIn", {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify("data"), // data can be `string` or {object}!
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-    .then(response => console.log('Success:', JSON.stringify(response)))
-    .catch(error => console.error('Error:', error));
+  //  data = this.state
+    fetch("http://localhost:5000/singIn", {
+      method: 'GET', 
+      
+      headers: { "Content-Type": "application/json" }
+    }).then(response => response.json())
+      .then(newData => {
+        console.log(newData)
+        this.setState({shops: newData})});
+    
+    
 
   }
   render() {

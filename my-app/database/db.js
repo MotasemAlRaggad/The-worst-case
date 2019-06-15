@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true}) 
 
 // mongoose.connect('mongodb://localhost/myNewData', { useNewUrlParser: true ,createIndexes : true });
 
@@ -33,13 +33,11 @@ const usersSchema = new Schema({
 });
 
 //This Schema for USer Information about the car
-const shop = new Schema({
+const shopSchema = new Schema({
 
   shopname: { type: String, required: true },
   shoplocation: { type: String },
   workkinghour: { type: Number },
-
-  specialties: { type: String },
   phoneNumber: { type: Number, required: true },
 
 });
@@ -48,10 +46,17 @@ const shop = new Schema({
 
 
 const users = mongoose.model('users', usersSchema);
-const shops = mongoose.model('shops', shop);
-
+const Shop = mongoose.model('shops', shopSchema);
+const save = (obj,cb)=>{
+  var shop = new Shop(obj)
+  console.log('whaaaaatt')
+  shop.save((err,res)=>{
+    console.log("ERR",err,"RES",res)
+    cb(err,res)
+  })
+}
 module.exports.users = users;
-module.exports.shop = shops;
+module.exports.save = save;
 
 
 // const mongoose = require('mongoose');
