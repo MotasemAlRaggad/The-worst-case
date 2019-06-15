@@ -36,12 +36,12 @@ app.post("/tgo", (req, res) => {
     
     });
 
-    app.get('/signInClient',  function(req, res) {
+    app.get('/singIn',  function(req, res) {
       
       shop.findOne({}).then(function(shops){
           return res.send({shops: shops});
       }).catch(function(err){
-        res.send("raggad")
+        res.send(dhshsh)
       })
   });
     // app.get('/', function(req, res) {
