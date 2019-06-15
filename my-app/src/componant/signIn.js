@@ -29,13 +29,15 @@ componentWillMount(){
 
     // event.preventDefault();
 
-     return fetch('/singIn', {
-      method: 'GET',
-      headers: { "Content-Type": "application/json" }
-    }).then(response => response.json())
-      .then(newData => {
-        console.log(newData)
-        this.setState({shops: newData})});
+    fetch(" http://localhost:8080/signIn", {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify("data"), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .then(response => console.log('Success:', JSON.stringify(response)))
+    .catch(error => console.error('Error:', error));
 
   }
   render() {
