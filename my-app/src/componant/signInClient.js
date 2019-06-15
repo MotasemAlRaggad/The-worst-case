@@ -1,133 +1,95 @@
 import React from "react";
 
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 class singInClient extends React.Component {
-
-
   constructor(props) {
     super(props);
 
     this.state = {
-      toggle1: false,
-      shopname: "",
-      shoplocation: "",
-      workkinghour: "",
-      specialties: "",
-      phoneNumber: "",
+      username: "",
+      password: "",
+      id: "",
+      phoneNumber: ""
     };
-    this.handleChange = this.handleChange.bind(this);
+  }
+  onclick() {
+    var data = this.state;
+    fetch("/reg-Shop", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    }).then(res => {
+      console.log("data hear");
+    });
   }
 
   handleChange(e) {
-    console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  click(event) {
-
-
-    event.preventDefault();
-    const data = this.state
-    fetch('http://localhost:5000/signInClient', {
-            method: 'POST', 
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body:JSON.stringify(data)
-    })
-    .then(response => response.json()).then(res=>console.log("ressssss",res)).catch(err=>console.log("ERRR",err));
-    console.log(this.state);
-
-  }
   render() {
-    const { classes } = this.props;
     return (
-      <div className="form-style-7">
+      <div>
+        <form>
+          <body>
+            <center>
+              <input
+                value={this.state.username}
+                label="username"
+                type="text"
+                placeholder="username"
+                onChange={this.handleChange.bind(this)}
+                name="username"
+              />
+              <br />
 
-        <form >
-          <body> <center>
+              <input
+                value={this.state.password}
+                label="password"
+                type="text"
+                placeholder="password"
+                onChange={this.handleChange.bind(this)}
+                name="password"
+              />
 
+              <br />
 
+              <input
+                value={this.state.workkinghours}
+                label="id"
+                type="text"
+                placeholder="id"
+                name="id"
+                onChange={this.handleChange.bind(this)}
+              />
 
+              <br />
 
-            <input
-              id="filled-search"
-              label="shopname"
+              <input
+                value={this.state.phoneNumbers}
+                label="phoneNumber"
+                type="text"
+                placeholder="PhoneNumber"
+                onChange={this.handleChange.bind(this)}
+                name="phoneNumber"
+              />
 
-              type="text"
-              placeholder="Shopname"
-              // className={classes.textField}
-              // margin="normal"
-              // variant="filled"
-              onChange={this.handleChange}
-              name="shopname"
-            />
-            <br />
-      
-            <input
-              id="filled-search"
-              label="shoplocation"
-
-              type="text"
-              placeholder="Shoplocation"
-              // className={classes.textField}
-              // margin="normal"
-              // variant="filled"
-              onChange={this.handleChange}
-              name="shoplocation"
-            />
-
-            <br />
-
-
-            <input
-               id="filled-search"
-              label="workkinghour"
-              // className={classes.textField}
-              type="text"
-              placeholder="Working-Hour"
-              name="workkinghour"
-              autoComplete="workkinghour"
-              // margin="normal"
-              // variant="filled"
-              onChange={this.handleChange}
-
-            />
-
-
-            <br />
-
-
-            <input
-            id="filled-search"
-              label="phoneNumber"
-              // className={classes.textField}
-              type="text"
-              placeholder="PhoneNumber"
-              // autoComplete="current-phoneNumber"
-              // margin="normal"
-              // variant="filled"
-              onChange={this.handleChange}
-              name="phoneNumber"
-
-            />
-          
-
-
-
-            <br />
-
-
-            <button   type="submit" onClick={(event) => this.click(event)} >sign Up</button>
-
-
-          </center>
+              <br />
+              
+                <button onClick={this.onclick.bind(this)}>sign Up</button>
+              
+            </center>
           </body>
         </form>
-      
- 
-      
- {/* <header class="header_area" >
+
+        {/* ////////////// templet html /////// */}
+
+        {/* <header class="header_area" >
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
@@ -171,12 +133,9 @@ class singInClient extends React.Component {
             signUpClient
       </button>
         </NavLink> */}
-
       </div>
-
-    )
+    );
   }
-
 }
 
-export default singInClient
+export default singInClient;

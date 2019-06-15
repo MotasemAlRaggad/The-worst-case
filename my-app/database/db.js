@@ -14,15 +14,15 @@ mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true})
 //This For User Information YY
 const usersSchema = new Schema({
 
-  firstName: { type: String, trim: true, required: true },
-  lastName: { type: String, trim: true, required: true },
+  username: { type: String, trim: true, required: true },
+  
 
-  email: {
-    type: String,
-    required: [true, 'Email Field is required'],
-    unique: true,
-    match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-  },
+  // email: {
+  //   type: String,
+  //   required: [true, 'Email Field is required'],
+  //   unique: true,
+  //   match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+  // },
 
   password: { type: String, required: true },
 
@@ -33,11 +33,11 @@ const usersSchema = new Schema({
 });
 
 //This Schema for USer Information about the car
-const shopSchema = new Schema({
+const lowSchema = new Schema({
 
-  shopname: { type: String, required: true },
-  shoplocation: { type: String },
-  workkinghour: { type: Number },
+  username: { type: String, required: true },
+  password: { type: String },
+  id: { type: Number },
   phoneNumber: { type: Number, required: true },
 
 });
@@ -45,8 +45,8 @@ const shopSchema = new Schema({
 // const test = new usersSchema({firstName : "yazan" ,lastName : "Najjar" , email : "YAZANANANANAN" , phoneNumber: 123123 , password : "ASSAD" })
 
 
-const users = mongoose.model('users', usersSchema);
-const Shop = mongoose.model('shops', shopSchema);
+const Users = mongoose.model('users', usersSchema);
+const Low = mongoose.model('low', lowSchema);
 const save = (obj,cb)=>{
   var shop = new Shop(obj)
   console.log('whaaaaatt')
@@ -55,8 +55,9 @@ const save = (obj,cb)=>{
     cb(err,res)
   })
 }
-module.exports.users = users;
+module.exports.Users = Users;
 module.exports.save = save;
+module.exports.Low = Low;
 
 
 // const mongoose = require('mongoose');

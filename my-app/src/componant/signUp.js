@@ -1,80 +1,82 @@
-import React from "react";
 
-import {
-  BrowserRouter as 
-  // Router,
-  // Route,
-  // Link,
-  NavLink
-} from "react-router-dom";
 
-class signUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: ""
-    };
-  }
+// import React from "react";
 
-  onChange = e => {
-    this.setState(
-      { [e.target.username]: e.target.value },
-      { [e.target.password]: e.target.value }
-    );
-  };
+// import {
+//   BrowserRouter as 
+//   // Router,
+//   // Route,
+//   // Link,
+//   NavLink
+// } from "react-router-dom";
 
-  onSubmit = e => {
-    e.preventDefault();
-    // get form data out of state
-    const { username, password } = this.state;
+// class signUp extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       username: "",
+//       password: ""
+//     };
+//   }
 
-    fetch("", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify(this.state)
-    });
-    console
-      .log("raggad")
-      .then(result => result.json())
-      .then(info => {
-        console.log(info);
-      });
-  };
+//   onChange = e => {
+//     this.setState(
+//       { [e.target.username]: e.target.value },
+//       { [e.target.password]: e.target.value }
+//     );
+//   };
 
-  render() {
-    const { classes } = this.props;
-    const { first_name, last_name, password, email, phone } = this.state;
-    return (
-      <div className="session">
-        <h1>Create your Account</h1>
-        <div className="register-form">
-          <form method="POST" action="/signUp">
-            {/* <input label="First Name" name="first_name" />
-                <br/>
-                <input label="Last Name" name="last_name" />
-                <br/> */}
-            <input label="username" name="username" />
-            <br />
-            <input label="Password" name="password" />
-            <br />
-            {/* <input label="Phone #" name="phone" /> */}
-            <NavLink to="lowaer">
-              {" "}
-              <button type="Submit" variant="contained" color="primary">
-                signUp
-              </button>
-            </NavLink>
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
+//   onSubmit = e => {
+//     e.preventDefault();
+//     // get form data out of state
+//     const { username, password } = this.state;
 
-export default signUp;
+//     fetch("", {
+//       method: "POST",
+//       headers: {
+//         "Content-type": "application/json"
+//       },
+//       body: JSON.stringify(this.state)
+//     });
+//     console
+//       .log("raggad")
+//       .then(result => result.json())
+//       .then(info => {
+//         console.log(info);
+//       });
+//   };
+
+//   render() {
+//     const { classes } = this.props;
+//     const { first_name, last_name, password, email, phone } = this.state;
+//     return (
+//       <div className="session">
+//         <h1>Create your Account</h1>
+//         <div className="register-form">
+//           <form method="POST" action="/signUp">
+//             {/* <input label="First Name" name="first_name" />
+//                 <br/>
+//                 <input label="Last Name" name="last_name" />
+//                 <br/> */}
+//             <input label="username" name="username" />
+//             <br />
+//             <input label="Password" name="password" />
+//             <br />
+//             {/* <input label="Phone #" name="phone" /> */}
+//             <NavLink to="lowaer">
+//               {" "}
+//               <button type="Submit" variant="contained" color="primary">
+//                 signUp
+//               </button>
+//             </NavLink>
+//           </form>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+// export default signUp;
 // class signup extends React.Component {
 //   constructor(props) {
 //     super(props)
