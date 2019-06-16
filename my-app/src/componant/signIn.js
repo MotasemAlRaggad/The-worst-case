@@ -16,26 +16,43 @@ class signIn extends React.Component {
       password: ""
     };
   }
-  onclick() {
-    var data = this.state;
-    console.log(data)
-    fetch("/users", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" }
-    }).then(res => {
-      console.log("data hear");
+  handleInputChange = (event) => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
+  // onclick
+  onSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        this.props.history.push('/lowaer');
+      } else {
+        const error = new Error(res.error);
+        throw error;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Error logging in please try again');
     });
   }
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+
+ 
 
   render() {
     return (
       <div>
-        <form>
+        <form  onSubmit={this.onSubmit}>
           <body>
             <center>
               <input
@@ -43,7 +60,7 @@ class signIn extends React.Component {
                 label="username"
                 type="text"
                 placeholder="username"
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleInputChange.bind(this)}
                 name="username"
               />
               <br />
@@ -53,12 +70,13 @@ class signIn extends React.Component {
                 label="password"
                 type="text"
                 placeholder="password"
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleInputChange.bind(this)}
                 name="password"
               />
-              <NavLink to="lowaer">
+               <input type="submit" value="Submit"/>
+              {/* <NavLink to="lowaer">
                 <button onClick={this.onclick.bind(this)}>signIn</button>
-              </NavLink>
+              </NavLink> */}
             </center>
           </body>
         </form>

@@ -15,8 +15,15 @@ const cors = require("cors");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+
+
+
 app.get("/a", (req, res) => {
-  console.log("motasem raggad");
+  // console.log("motasem raggad");
   const motasem = [{ raggad: "motasem" }];
 
   res.json(motasem);
@@ -32,7 +39,7 @@ app.post("/tgo", (req, res) => {
 
 app.get("/signIn", function(req, res) {
   var shopname = req.body.shopname;
-  console.log(shopname);
+  // console.log(shopname);
 });
 
 app.post("/reg-Shop", function(req, res) {
@@ -47,7 +54,7 @@ app.post("/reg-Shop", function(req, res) {
     id: id,
     phoneNumber: phoneNumber
   }).then((userrrr)=>{
-    console.log(userrrr)
+    // console.log(userrrr)
  res.send(userrrr)
   })
   
@@ -69,15 +76,59 @@ app.post("/reg-Shop", function(req, res) {
 app.post("/users",(req, res)=>{
   
   var username = req.body.username;
-  console.log(req.body.username)
-  Low.findOne({username: username}).then(function(user){
-    
-    if(!user){
-      return res.send({error: 'Please sign up'}); 
-  }
-})
-})
+  var password = req.body.password;
+  
+  Low.findOne({ username }, function(err, user) {
+    if (err) {
+      // console.error(err);
+      res.status(500)
+        .json({
+        error: 'Internal error please try again'
+      });
+    } else if (!user) {
+      res.status(401)
+        .json({
+        error: 'Incorrect username or password'
+      });
+    } else {
+      console.log(user)
+      res.sendStatus(200);
+    }
+  });
+});
+  
+  
+  
+  // console.log(req.body.username)
+//   Low.find({ 'username': username,'password':password }, function(err, Low) {
 
+//     if (err) {
+
+//         console.log('Signup error');
+//         return res.send(err);
+//     }
+
+//     //if user found.
+//     if (Low.length!=0) {
+//       if(Low[0].username){
+//         // console.log(Low[0].username)
+//         console.log('Username already exists, username: ' + username);                         
+//          }else{
+//             // console.log('password already used, password: ' + password);      
+//          }                                    
+       
+
+//     }
+//     if (Low.length!=0) {
+//       if(Low[0].password){
+//         // console.log(Low[0].password)
+//         console.log('Username already exists, password: ' + password);                         
+//          }                                  
+       
+
+//     }
+// })
+// })
 
 
 
