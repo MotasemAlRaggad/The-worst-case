@@ -1,11 +1,11 @@
 import React from "react";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Link,
+//   NavLink
+// } from "react-router-dom";
 class singInClient extends React.Component {
   constructor(props) {
     super(props);

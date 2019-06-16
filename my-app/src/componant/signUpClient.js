@@ -1,12 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
+import {
+  BrowserRouter as
+  //  Router,
+  // Route,
+  // Link,
+  NavLink
+} from "react-router-dom";
 class singUpclient extends React.Component {
-
-    render() {
-        return (
-
-            <div>
-                 {/* <header class="header_area" >
+  render() {
+    return (
+      <div>
+        {/* <header class="header_area" >
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
@@ -37,24 +41,17 @@ class singUpclient extends React.Component {
       </nav>
     </div>
   </header> */}
-                <input />
-                <input />
-                <input />
-                <input />
-                <input />
-                <input />
-                <NavLink to="signUpclient">
-                    <button>
-                        next5
-      </button>
-                </NavLink>
-
-
-            </div>
-
-        )
-
-    }
-
+        <input />
+        <input />
+        <input />
+        <input />
+        <input />
+        <input />
+        <NavLink to="signUpclient">
+          <button>next5</button>
+        </NavLink>
+      </div>
+    );
+  }
 }
-export default singUpclient
+export default singUpclient;

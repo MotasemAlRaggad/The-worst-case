@@ -66,11 +66,11 @@ app.post("/reg-Shop", function(req, res) {
 // });
 
 
-app.get("/users",(req, res)=>{
+app.post("/users",(req, res)=>{
   
   var username = req.body.username;
-  console.log(req.body)
-  Low.find({username: username}).then(function(user){
+  console.log(req.body.username)
+  Low.findOne({username: username}).then(function(user){
     
     if(!user){
       return res.send({error: 'Please sign up'}); 

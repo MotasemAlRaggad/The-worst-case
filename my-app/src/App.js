@@ -4,8 +4,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  NavLink
+  // Link,
+  // NavLink
 } from "react-router-dom";
 import HomePage from "./componant/HomePage";
 import signIn from "./componant/signIn";
