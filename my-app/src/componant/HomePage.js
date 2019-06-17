@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as 
-  Router,
+  BrowserRouter as Router,
   // Route,
   // Link,
   NavLink
@@ -57,9 +56,19 @@ class Home extends React.Component {
         <NavLink to="/signIn">
           <button>signIn</button>
         </NavLink>
+
+
+
+        <NavLink to="/lowerInf">
+          <button>signUpLower</button>
+        </NavLink>
+
+
+
         <NavLink to="/">
           <button>Home</button>
         </NavLink>
+
 
         <NavLink to="/signInClient">
           <button>signInClient</button>

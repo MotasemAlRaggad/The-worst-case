@@ -47,7 +47,7 @@ const lowerSchema = new Schema ({
   name : {type :String , required: true },
   phoneNumber : { type : Number,required: true},
   location : { type : String ,required: true},
-  graduateYear: {type:String,required: true},
+  graduateYear: {type:Number,required: true},
   graduatUN:{type:String,required:true},
 
 });
@@ -55,7 +55,7 @@ const lowerSchema = new Schema ({
 
 const Users = mongoose.model('users', usersSchema);
 const Low = mongoose.model('low', lowSchema);
-const Lower = mongoose.model('Lower', lowerSchema);
+const Lower = mongoose.model('lower', lowerSchema);
 
 const save = (obj,cb)=>{
   var shop = new Shop(obj)

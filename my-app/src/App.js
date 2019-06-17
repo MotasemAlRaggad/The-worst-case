@@ -12,6 +12,7 @@ import signIn from "./componant/signIn";
 import signInClient from "./componant/signInClient";
 import signUp from "./componant/signUp";
 import signUpclient from "./componant/signUpClient";
+import lowerInf from "./componant/lowerInf";
 // import Header from "./componant/Header";
 // import footer from "./componant/footer";
 import lowaer from "./componant/lowaer";
@@ -46,6 +47,7 @@ class App extends React.Component {
           <Route path="/signInClient" component={signInClient} />
           <Route path="/signUp" component={signUp} />
           <Route path="/signUpclient" component={signUpclient} />
+          <Route path="/lowerInf" component={lowerInf} />
         </Router>
       </div>
     );

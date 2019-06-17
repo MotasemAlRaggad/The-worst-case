@@ -15,9 +15,9 @@ const cors = require("cors");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// app.get('*', (req,res) =>{
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 
 
@@ -82,19 +82,18 @@ app.post("/lowInf", function(req, res) {
 });
 
 
+app.get("/raggad" , (req,res)=>{
+  var name = req.body.name;
+  Lower.find({name}).then( function (name) {
+    return res.send(name)
+  }).catch(function(err){
+    return res.send({error: 'Server Error'});
+})
+})
 
 
 
-// app.post("/reg-Shops", function(req, res) {
   
-// 
- 
-//   }).then(()=>{
-//     console.log("row created")
-//   })
-// });
-
-
 app.post("/users",(req, res)=>{
   
   var username = req.body.username;
@@ -113,12 +112,11 @@ app.post("/users",(req, res)=>{
         error: 'Incorrect username or password'
       });
     } else {
-      console.log(user)
+      // console.log(user)
       res.sendStatus(200);
     }
   });
 });
-  
   
   
   // console.log(req.body.username)
