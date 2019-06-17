@@ -42,11 +42,21 @@ const lowSchema = new Schema({
 
 });
 
-// const test = new usersSchema({firstName : "yazan" ,lastName : "Najjar" , email : "YAZANANANANAN" , phoneNumber: 123123 , password : "ASSAD" })
+
+const lowerSchema = new Schema ({
+  name : {type :String , required: true },
+  phoneNumber : { type : Number,required: true},
+  location : { type : String ,required: true},
+  graduateYear: {type:String,required: true},
+  graduatUN:{type:String,required:true},
+
+});
 
 
 const Users = mongoose.model('users', usersSchema);
 const Low = mongoose.model('low', lowSchema);
+const Lower = mongoose.model('Lower', lowerSchema);
+
 const save = (obj,cb)=>{
   var shop = new Shop(obj)
   console.log('whaaaaatt')
@@ -58,7 +68,7 @@ const save = (obj,cb)=>{
 module.exports.Users = Users;
 module.exports.save = save;
 module.exports.Low = Low;
-
+module.exports.Lower = Lower;
 
 // const mongoose = require('mongoose');
 // const Schema = mongoose.Schema;

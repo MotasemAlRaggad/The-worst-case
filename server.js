@@ -2,7 +2,7 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 const db = require("./my-app/database/db");
-const { Users, save, Low } = require("./my-app/database/db");
+const { Users, save, Low ,Lower} = require("./my-app/database/db");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
@@ -59,6 +59,28 @@ app.post("/reg-Shop", function(req, res) {
   })
   
 });
+app.post("/lowInf", function(req, res) {
+  var name = req.body.name;
+  var  phoneNumber= req.body.phoneNumber;
+  var location = req.body.location;
+  var graduateYear = req.body.graduateYear;
+  var graduatUN = req.body.graduatUN;
+
+
+  Lower.create({
+    name: name,
+    phoneNumber: phoneNumber,
+    location: location,
+    graduateYear: graduateYear,
+    graduatUN: graduatUN
+
+  }).then((lower)=>{
+    // console.log(userrrr)
+ res.send(lower)
+  })
+  
+});
+
 
 
 
