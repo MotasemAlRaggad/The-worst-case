@@ -16,6 +16,7 @@ import lowerInf from "./componant/lowerInf";
 // import Header from "./componant/Header";
 // import footer from "./componant/footer";
 import lowaer from "./componant/lowaer";
+import cases from "./componant/cases";
 import "./App.css";
 
 class App extends React.Component {
@@ -48,6 +49,7 @@ class App extends React.Component {
           <Route path="/signUp" component={signUp} />
           <Route path="/signUpclient" component={signUpclient} />
           <Route path="/lowerInf" component={lowerInf} />
+          <Route path="/cases" component={cases} />
         </Router>
       </div>
     );

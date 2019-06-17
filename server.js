@@ -80,6 +80,21 @@ app.post("/lowInf", function(req, res) {
   })
   
 });
+app.post("/case", function(req, res) {
+  const cases = req.body.cases;
+ 
+
+
+  Cases.create({
+    case: cases,
+   
+
+  }).then((Cases)=>{
+    // console.log(userrrr)
+ res.send(Cases)
+  })
+  
+});
 
 
 app.get("/raggad" , (req,res)=>{

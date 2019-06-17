@@ -42,6 +42,13 @@ const lowSchema = new Schema({
 
 });
 
+const caseSchema = new Schema({
+
+  cases: { type: String, required: true },
+ 
+
+});
+
 
 const lowerSchema = new Schema ({
   name : {type :String , required: true },
@@ -56,6 +63,7 @@ const lowerSchema = new Schema ({
 const Users = mongoose.model('users', usersSchema);
 const Low = mongoose.model('low', lowSchema);
 const Lower = mongoose.model('lower', lowerSchema);
+const Cases = mongoose.model('cases', caseSchema);
 
 const save = (obj,cb)=>{
   var shop = new Shop(obj)
@@ -69,6 +77,7 @@ module.exports.Users = Users;
 module.exports.save = save;
 module.exports.Low = Low;
 module.exports.Lower = Lower;
+module.exports.Cases = Cases;
 
 // const mongoose = require('mongoose');
 // const Schema = mongoose.Schema;

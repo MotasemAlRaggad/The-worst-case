@@ -64,14 +64,19 @@ class Home extends React.Component {
         </NavLink>
 
 
+        <NavLink to="/cases">
+          <button>enter your case here</button>
+        </NavLink>
+
+
 
         <NavLink to="/">
           <button>Home</button>
         </NavLink>
 
 
-        <NavLink to="/signInClient">
-          <button>signInClient</button>
+        <NavLink to="/signUpClient">
+          <button>signUpClient</button>
         </NavLink>
         <div>
           {/* <footer class="footer-area"/>
