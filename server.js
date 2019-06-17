@@ -84,8 +84,8 @@ app.post("/lowInf", function(req, res) {
 
 app.get("/raggad" , (req,res)=>{
   var name = req.body.name;
-  Lower.find({name}).then( function (name) {
-    return res.send(name)
+  Lower.find({}).then( function (Lower) {
+    return res.send(Lower)
   }).catch(function(err){
     return res.send({error: 'Server Error'});
 })
