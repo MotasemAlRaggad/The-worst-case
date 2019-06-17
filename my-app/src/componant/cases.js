@@ -11,13 +11,13 @@ class cases extends React.Component {
         };
       }
       onclick() {
-        
-        fetch("/case", {
+        console.log("data hear");
+        fetch("http://localhost:5000/cases", {
           method: "POST",
           body: JSON.stringify(this.state),
           headers: { "Content-Type": "application/json" }
         }).then(res => {
-          console.log("data hear");
+          
         });
       }
     
@@ -37,7 +37,7 @@ class cases extends React.Component {
           <br />
           <br />
 
-          <button>submit</button>
+          <button onClick={this.onclick.bind(this)}>submit</button>
         </center>
       </div>
     );

@@ -2,7 +2,7 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 const db = require("./my-app/database/db");
-const { Users, save, Low ,Lower} = require("./my-app/database/db");
+const { Users, save, Low, Lower, Cases } = require("./my-app/database/db");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
@@ -18,9 +18,6 @@ app.use(cors());
 // app.get('*', (req,res) =>{
 //   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 // });
-
-
-
 
 app.get("/a", (req, res) => {
   // console.log("motasem raggad");
@@ -44,7 +41,7 @@ app.get("/signIn", function(req, res) {
 
 app.post("/reg-Shop", function(req, res) {
   var username = req.body.username;
-  var  password= req.body.password;
+  var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
 
@@ -53,19 +50,17 @@ app.post("/reg-Shop", function(req, res) {
     password: password,
     id: id,
     phoneNumber: phoneNumber
-  }).then((userrrr)=>{
+  }).then(userrrr => {
     // console.log(userrrr)
- res.send(userrrr)
-  })
-  
+    res.send(userrrr);
+  });
 });
 app.post("/lowInf", function(req, res) {
   var name = req.body.name;
-  var  phoneNumber= req.body.phoneNumber;
+  var phoneNumber = req.body.phoneNumber;
   var location = req.body.location;
   var graduateYear = req.body.graduateYear;
   var graduatUN = req.body.graduatUN;
-
 
   Lower.create({
     name: name,
@@ -73,58 +68,49 @@ app.post("/lowInf", function(req, res) {
     location: location,
     graduateYear: graduateYear,
     graduatUN: graduatUN
-
-  }).then((lower)=>{
+  }).then(lower => {
     // console.log(userrrr)
- res.send(lower)
-  })
-  
+    res.send(lower);
+  });
 });
-app.post("/case", function(req, res) {
+app.post("/cases", function(req, res) {
   const cases = req.body.cases;
- 
 
-
+  // console.log(cases);
   Cases.create({
-    case: cases,
-   
-
-  }).then((Cases)=>{
+    cases: cases
+  }).then(cases => {
     // console.log(userrrr)
- res.send(Cases)
-  })
-  
+    
+    res.send(cases);
+    console.log(cases)
+  });
 });
 
-
-app.get("/raggad" , (req,res)=>{
+app.get("/raggad", (req, res) => {
   var name = req.body.name;
-  Lower.find({}).then( function (Lower) {
-    return res.send(Lower)
-  }).catch(function(err){
-    return res.send({error: 'Server Error'});
-})
-})
+  Lower.find({})
+    .then(function(Lower) {
+      return res.send(Lower);
+    })
+    .catch(function(err) {
+      return res.send({ error: "Server Error" });
+    });
+});
 
-
-
-  
-app.post("/users",(req, res)=>{
-  
+app.post("/users", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
-  
+
   Low.findOne({ username }, function(err, user) {
     if (err) {
       // console.error(err);
-      res.status(500)
-        .json({
-        error: 'Internal error please try again'
+      res.status(500).json({
+        error: "Internal error please try again"
       });
     } else if (!user) {
-      res.status(401)
-        .json({
-        error: 'Incorrect username or password'
+      res.status(401).json({
+        error: "Incorrect username or password"
       });
     } else {
       // console.log(user)
@@ -132,10 +118,7 @@ app.post("/users",(req, res)=>{
     }
   });
 });
-  
-  
 
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
 });
-
