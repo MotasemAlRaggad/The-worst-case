@@ -9,27 +9,17 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-    
+        
+       
 
         <NavLink to="/signIn">
-          <button>signIn</button>
+          <button>Client Page</button>
         </NavLink>
-        <NavLink to="/signInLow">
-          <button>signInLow</button>
-        </NavLink>
-
-        {/* <NavLink to="/displaycases">
-          <button>displaycases</button>
-        </NavLink> */}
-
-
-        {/* <NavLink to="/signUpLow">
-          <button>signUpLow</button>
-        </NavLink> */}
 
         
-        <NavLink to="/lowerInf">
-          <button>signUpLower</button>
+
+ <NavLink to="/signInLow">
+          <button>Lower Page</button>
         </NavLink>
 
 
@@ -37,19 +27,13 @@ class Home extends React.Component {
           <button>enter your case here</button>
         </NavLink>
 
-
-
         <NavLink to="/">
           <button>Home</button>
         </NavLink>
+       
+        
 
-
-        <NavLink to="/signUpClient">
-          <button>signUpClient</button>
-        </NavLink>
-        <div>
-         
-        </div>
+        <div />
       </div>
     );
   }

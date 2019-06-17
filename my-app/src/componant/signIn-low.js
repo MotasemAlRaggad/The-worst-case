@@ -52,6 +52,9 @@ class signInLow extends React.Component {
   render() {
     return (
       <div>
+          <NavLink to="/lowerInf">
+          <button>signUpLower</button>
+        </NavLink>
         <form  onSubmit={this.onSubmit}>
           <body>
             <center>

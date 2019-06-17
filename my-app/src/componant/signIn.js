@@ -52,7 +52,14 @@ class signIn extends React.Component {
   render() {
     return (
       <div>
+        <div>
+         <NavLink to="/signUpClient">
+          <button>signUpClient</button>
+        </NavLink>
+</div>
+
         <form  onSubmit={this.onSubmit}>
+        
           <body>
             <center>
               <input
