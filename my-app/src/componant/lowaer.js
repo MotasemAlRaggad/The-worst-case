@@ -31,17 +31,17 @@ class lowaer extends React.Component {
   render() {
     return (   
       <div>
-        {this.state.Lower.map(shop => (
+        {this.state.Lower.map(low => (
           <div>
-            {shop.name}
+            {low.name}
             <br />
-            {shop.phoneNumber}
+            {low.phoneNumber}
             <br />
-            {shop.location}
+            {low.location}
             <b />
-            {shop.graduateYear}
+            {low.graduateYear}
             <br />
-            {shop.graduatUN}
+            {low.graduatUN}
           </div>
         ))}
       </div>
