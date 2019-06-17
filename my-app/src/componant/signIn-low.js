@@ -1,8 +1,8 @@
 import React from "react";
 import {
   BrowserRouter as
-  // Router,
-  // Route,
+  Router,
+  Route,
   // Link,
   NavLink
 } from "react-router-dom";
@@ -52,9 +52,13 @@ class signInLow extends React.Component {
   render() {
     return (
       <div>
+          <div>
           <NavLink to="/lowerInf">
           <button>signUpLower</button>
         </NavLink>
+</div>
+
+
         <form  onSubmit={this.onSubmit}>
           <body>
             <center>

@@ -6,7 +6,7 @@ import React from "react";
 //   Link,
 //   NavLink
 // } from "react-router-dom";
-class singUpClient extends React.Component {
+class signUpClient extends React.Component {
   constructor(props) {
     super(props);
 
@@ -93,4 +93,4 @@ class singUpClient extends React.Component {
   }
 }
 
-export default singUpClient;
+export default signUpClient;
