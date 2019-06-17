@@ -6,7 +6,7 @@ import React from "react";
 //   Link,
 //   NavLink
 // } from "react-router-dom";
-class singUpClient extends React.Component {
+class singUplow extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,7 +20,7 @@ class singUpClient extends React.Component {
   }
   onclick() {
     var data = this.state;
-    fetch("http://localhost:5000/reg-Client", {
+    fetch("http://localhost:5000/reg-Low", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
@@ -93,4 +93,4 @@ class singUpClient extends React.Component {
   }
 }
 
-export default singUpClient;
+export default singUplow;

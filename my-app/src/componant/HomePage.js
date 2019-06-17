@@ -14,9 +14,20 @@ class Home extends React.Component {
         <NavLink to="/signIn">
           <button>signIn</button>
         </NavLink>
+        <NavLink to="/signInLow">
+          <button>signInLow</button>
+        </NavLink>
+
+        {/* <NavLink to="/displaycases">
+          <button>displaycases</button>
+        </NavLink> */}
 
 
+        {/* <NavLink to="/signUpLow">
+          <button>signUpLow</button>
+        </NavLink> */}
 
+        
         <NavLink to="/lowerInf">
           <button>signUpLower</button>
         </NavLink>

@@ -15,7 +15,7 @@ class lowerInf extends React.Component {
   onclick() {
     var data = this.state;
     console.log(data)
-    fetch("/lowInf", {
+    fetch("http://localhost:5000/lowInf", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }

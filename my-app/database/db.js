@@ -58,8 +58,16 @@ const lowerSchema = new Schema ({
   graduatUN:{type:String,required:true},
 
 });
+const displaySchema = new Schema({
 
+  username: { type: String, required: true },
+  password: { type: String },
+  id: { type: Number },
+  phoneNumber: { type: Number, required: true },
 
+});
+
+const Display = mongoose.model('dis', displaySchema);
 const Users = mongoose.model('users', usersSchema);
 const Low = mongoose.model('low', lowSchema);
 const Lower = mongoose.model('lower', lowerSchema);
@@ -78,6 +86,7 @@ module.exports.save = save;
 module.exports.Low = Low;
 module.exports.Lower = Lower;
 module.exports.Cases = Cases;
+module.exports.Display = Display;
 
 // const mongoose = require('mongoose');
 // const Schema = mongoose.Schema;
