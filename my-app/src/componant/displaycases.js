@@ -1,4 +1,10 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    // Link,
+    NavLink
+  } from "react-router-dom";
 
 class displaycases extends React.Component {
   constructor(props) {
@@ -33,8 +39,22 @@ class displaycases extends React.Component {
       <div>
         {this.state.Cases.map(cas => (
           <div>
-            {cas.cases}
-        
+              <NavLink>
+              <button>
+            {cas.name}
+        </button>
+        </NavLink>
+        <br>
+        </br>
+        {cas.phonNumber}
+        <br>
+        </br>
+        {cas.typeOfTheCase}
+        <br>
+        </br>
+        {cas.cases}
+        <br>
+        </br>
           </div>
         ))}
       </div>

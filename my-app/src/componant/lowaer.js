@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  // Link,
+  NavLink
+} from "react-router-dom";
 
 class lowaer extends React.Component {
   constructor(props) {
@@ -32,8 +38,13 @@ class lowaer extends React.Component {
     return (   
       <div>
         {this.state.Lower.map(low => (
+          
           <div>
-            {low.name}
+             <NavLink to="cases">
+            <button>
+            {low.name} 
+            </button>
+            </NavLink>
             <br />
             {low.phoneNumber}
             <br />
@@ -42,7 +53,9 @@ class lowaer extends React.Component {
             {low.graduateYear}
             <br />
             {low.graduatUN}
+            
           </div>
+         
         ))}
       </div>
     );

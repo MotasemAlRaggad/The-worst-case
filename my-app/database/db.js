@@ -43,7 +43,12 @@ const lowSchema = new Schema({
 });
 
 const caseSchema = new Schema({
-
+  
+  
+  
+  name:{ type: String, required: true },
+  phonNumber:{ type: Number, required: true },
+  typeOfTheCase:{ type: String, required: true },
   cases: { type: String, required: true },
  
 

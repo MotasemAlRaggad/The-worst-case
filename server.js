@@ -2,7 +2,14 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 const db = require("./my-app/database/db");
-const { Users, save, Low, Lower, Cases,Display } = require("./my-app/database/db");
+const {
+  Users,
+  save,
+  Low,
+  Lower,
+  Cases,
+  Display
+} = require("./my-app/database/db");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
@@ -73,7 +80,6 @@ app.post("/reg-Low", function(req, res) {
   });
 });
 
-
 app.post("/lowInf", function(req, res) {
   var name = req.body.name;
   var phoneNumber = req.body.phoneNumber;
@@ -93,7 +99,6 @@ app.post("/lowInf", function(req, res) {
   });
 });
 
-
 app.get("/raggad", (req, res) => {
   var name = req.body.name;
   Lower.find({})
@@ -106,16 +111,21 @@ app.get("/raggad", (req, res) => {
 });
 
 app.post("/cases", function(req, res) {
+  const name = req.body.name;
+  const phonNumber = req.body.phonNumber;
+  const typeOfTheCase = req.body.typeOfTheCase;
   const cases = req.body.cases;
-
   // console.log(cases);
   Cases.create({
+    name: name ,
+    phonNumber: phonNumber,
+    typeOfTheCase: typeOfTheCase,
     cases: cases
   }).then(cases => {
     // console.log(userrrr)
-    
+
     res.send(cases);
-    console.log(cases)
+    console.log(cases);
   });
 });
 app.get("/get-cases", (req, res) => {
