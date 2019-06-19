@@ -25,17 +25,14 @@ class cases extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div >
         <center>
-          <p>
-            We Well Understand Your Intention and you will have a Free Case
-            Evaluation
-          </p>
+         
           <section class="hero-banner">
     <div class="hero-banner__content text-center">
       <h1>We Well Understand Your Intention</h1>
-      <a class="button" href="#">Make an Appoinment</a>
-    </div>
+     
+    </div >
   </section>
 
           <input

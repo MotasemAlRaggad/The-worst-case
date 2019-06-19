@@ -53,7 +53,7 @@ class Home extends React.Component {
   {/* <!--================ Work Statics section end =================-->         */}
 
   {/* <!--================ About section start =================--> */}
-  <section class="d-lg-flex align-items-center section-margin--large">
+  {/* <section class="d-lg-flex align-items-center section-margin--large">
     <div class="about__videoWrapper">
       <div class="about__video">
         <div class="about__video-image">
@@ -75,12 +75,12 @@ class Home extends React.Component {
         <a class="button mt-xl-3" href="#">Learn More</a>
       </div>
     </div>
-  </section>
+  </section> */}
   {/* <!--================ About section end =================-->
 
 
   {/* <!--================ Subject section start =================--> */}
-  <section class="section-margin" />
+  {/* <section class="section-margin" />
     <div class="container">
       <div class="section-intro text-center pb-65px">
         <h2 class="section-intro__title">Our Practice Area</h2>
@@ -150,12 +150,12 @@ class Home extends React.Component {
       <div class="col-12 text-center mt-5 pt-xl-4">
         <a class="button" href="#">View All Practices <span class="align-middle" ><i class="ti-arrow-right" ></i></span ></a>
       </div>
-    </div>
+    </div> */}
   
   {/* <!--================ Subject section end =================--> */}
 
   {/* <!--================ Testimonial section start =================-->   */}
-   <section class="bg-albaster section-padding--small" />
+   {/* <section class="bg-albaster section-padding--small" />
      <div class="container">
        <div class="section-intro text-center pb-65px">
          <h2 class="section-intro__title" >Client Says About Me</h2>
@@ -215,13 +215,13 @@ class Home extends React.Component {
            </div>
          </div>
        </div>
-     </div>
+     </div> */}
      
   
   {/* <!--================ Testimonial section end =================-->   */}
 
   {/* <!--================ Team section start =================-->   */}
-   <section class="section-margin"> 
+   {/* <section class="section-margin"> 
      <div class="container">
        <div class="section-intro text-center pb-65px">
          <h2 class="section-intro__title">Meet Our Attorneys</h2>
@@ -298,7 +298,7 @@ class Home extends React.Component {
 
 
   {/* <!--================ Cta section start =================-->   */}
-   <section class="section-padding--smaller cta-wrapper">
+   {/* <section class="section-padding--smaller cta-wrapper">
      <div class="container">
        <div class="cta__content text-center">
          <h2>Free Case Evaluation</h2>
@@ -306,12 +306,12 @@ class Home extends React.Component {
          <button class="button button-cta">Contact us Now</button>
        </div>
      </div>
-   </section>
+   </section> */} 
   {/* <!--================ Cta section end =================-->   */}
 
-// {/*  */}
+ {/*  */}
   {/* <!--================ Blog section start =================-->   */}
-   <section class="section-margin"/>
+   {/* <section class="section-margin"/>
      <div class="container">
        <div class="section-intro text-center pb-65px">
          <h2 class="section-intro__title">Latest From Blog</h2>
@@ -370,7 +370,7 @@ class Home extends React.Component {
          </div>
        </div>
      </div>
-   
+    */}
 
   </div>
       

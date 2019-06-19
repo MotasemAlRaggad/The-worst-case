@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as
-  Router,
+  BrowserRouter as Router,
   Route,
   // Link,
   NavLink
@@ -16,50 +15,42 @@ class signInLow extends React.Component {
       password: ""
     };
   }
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     const { value, name } = event.target;
     this.setState({
       [name]: value
     });
-  }
+  };
   // onclick
-  onSubmit = (event) => {
+  onSubmit = event => {
     event.preventDefault();
-    fetch('http://localhost:5000/sign-in-low', {
-      method: 'POST',
+    fetch("http://localhost:5000/sign-in-low", {
+      method: "POST",
       body: JSON.stringify(this.state),
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       }
     })
-    .then(res => {
-      if (res.status === 200) {
-        this.props.history.push('/displaycases');
-      } else {
-        const error = new Error(res.error);
-        throw error;
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Error logging in please try again');
-    });
-  }
-
-
- 
+      .then(res => {
+        if (res.status === 200) {
+          this.props.history.push("/displaycases");
+        } else {
+          const error = new Error(res.error);
+          throw error;
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error logging in please try again");
+      });
+  };
 
   render() {
     return (
       <div>
-          <div>
-          <NavLink to="/lowerInf">
-          <button>signUpLower</button>
-        </NavLink>
-</div>
+        <center>
 
-
-        <form  onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit}>
           <body>
             <center>
               <input
@@ -80,14 +71,19 @@ class signInLow extends React.Component {
                 onChange={this.handleInputChange.bind(this)}
                 name="password"
               />
-               <input type="submit" value="Submit"/>
-              
+              <br>
+              </br>
+              <input type="submit" value="Submit" />
             </center>
           </body>
         </form>
+
+        <NavLink to="/lowerInf">
+          <button>signUpLower</button>
+        </NavLink>
+        </center>
       </div>
 
-      
     );
   }
 }

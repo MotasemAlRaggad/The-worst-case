@@ -36,10 +36,10 @@ class lowaer extends React.Component {
   }
   render() {
     return (   
-      <div>
+      <div class="grid-container">
         {this.state.Lower.map(low => (
           
-          <div>
+          <div id="item1">
              <NavLink to="cases">
             <button>
             {low.name} 

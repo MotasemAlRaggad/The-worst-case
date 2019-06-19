@@ -11,6 +11,27 @@
   width: 300px;
   height: 150px;
 }
+/* .container img {
+  width: 100%;
+  height: auto;
+} */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 5px;
+  background-color : #a02610;
+  padding: 50px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 150px ;
+  font-size: 30px;
+}
+#item1 {
+  grid-row: 0/ span 10;
+}
 
 .App-header {
   background-color: #282c34;

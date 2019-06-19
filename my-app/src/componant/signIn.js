@@ -48,11 +48,11 @@ class signIn extends React.Component {
   render() {
     return (
       <div>
-        <div>
-        <NavLink to="/signUpClient">
-          <button>signUpClient</button>
-        </NavLink>
-        </div>
+        <center>
+
+        
+
+        
         <form onSubmit={this.onSubmit}>
           <body >
             <center>
@@ -74,12 +74,17 @@ class signIn extends React.Component {
                 onChange={this.handleInputChange.bind(this)}
                 name="password"
               />
+              <br>
+              </br>
               <input type="submit" value="Submit" />
             </center>
           </body>
           
+          <NavLink to="/signUpClient">
+          <button>signUpClient</button>
+        </NavLink>
         </form>
-       
+        </center>
       </div>
     );
   }
