@@ -20,7 +20,7 @@ import cases from "./componant/cases";
 import displaycases from "./componant/displaycases";
 import signInLow from "./componant/signIn-low";
 import singUplow from "./componant/signUpLow";
-
+import user from "./componant/user";
 
 import "./App.css";
 
@@ -52,7 +52,7 @@ class App extends React.Component {
           <Route path="/displaycases" component={displaycases} />
           <Route path="/signInLow" component={signInLow} />
           <Route path="/singUplow" component={singUplow} />
-
+          <Route path="/user" component={user} />
           
         </Router>
       </div>

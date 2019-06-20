@@ -7,6 +7,7 @@ class cases extends React.Component {
     this.state = {
       name: "",
       phonNumber: "",
+      lawyer:"",
       typeOfTheCase: "",
       cases: ""
     };
@@ -25,15 +26,13 @@ class cases extends React.Component {
   }
   render() {
     return (
-      <div >
+      <div>
         <center>
-         
           <section class="hero-banner">
-    <div class="hero-banner__content text-center">
-      <h1>We Well Understand Your Intention</h1>
-     
-    </div >
-  </section>
+            <div class="hero-banner__content text-center">
+              <h1>We Well Understand Your Intention</h1>
+            </div>
+          </section>
 
           <input
             type="text"
@@ -48,6 +47,15 @@ class cases extends React.Component {
             value={this.state.phonNumber}
             onChange={this.handleChange.bind(this)}
             name="phonNumber"
+          />
+
+          <br />
+          <br />
+          <input
+            type="text"
+            value={this.state.lawyer}
+            onChange={this.handleChange.bind(this)}
+            name="lawyer"
           />
           <br />
           <br />

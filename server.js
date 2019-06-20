@@ -26,25 +26,25 @@ app.use(cors());
 //   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 // });
 
-app.get("/a", (req, res) => {
-  // console.log("motasem raggad");
-  const motasem = [{ raggad: "motasem" }];
+// app.get("/a", (req, res) => {
+//   // console.log("motasem raggad");
+//   const motasem = [{ raggad: "motasem" }];
 
-  res.json(motasem);
-});
+//   res.json(motasem);
+// });
 
-app.post("/tgo", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+// app.post("/tgo", (req, res) => {
+//   const username = req.body.username;
+//   const password = req.body.password;
 
-  User.findOne({ username: username });
-  res.send("raggad");
-});
+//   User.findOne({ username: username });
+//   res.send("raggad");
+// });
 
-app.get("/signIn", function(req, res) {
-  var shopname = req.body.shopname;
-  // console.log(shopname);
-});
+// app.get("/signIn", function(req, res) {
+//   var shopname = req.body.shopname;
+//   // console.log(shopname);
+// });
 
 app.post("/reg-Client", function(req, res) {
   var username = req.body.username;
@@ -63,17 +63,30 @@ app.post("/reg-Client", function(req, res) {
   });
 });
 
+app.get("/cli-name", (req, res) => {
+  var username = req.body.username;
+  Low.find({})
+    .then(function(Low) {
+      return res.send(Low);
+    })
+    .catch(function(err) {
+      return res.send({ error: "Server Error" });
+    });
+});
+
 app.post("/reg-Low", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
-
+  
+  
   Display.create({
     username: username,
     password: password,
     id: id,
     phoneNumber: phoneNumber
+    
   }).then(user2 => {
     // console.log(userrrr)
     res.send(user2);
@@ -113,12 +126,14 @@ app.get("/raggad", (req, res) => {
 app.post("/cases", function(req, res) {
   const name = req.body.name;
   const phonNumber = req.body.phonNumber;
+  var lawyer = req.body.lawyer;
   const typeOfTheCase = req.body.typeOfTheCase;
   const cases = req.body.cases;
   // console.log(cases);
   Cases.create({
     name: name ,
     phonNumber: phonNumber,
+    lawyer: lawyer,
     typeOfTheCase: typeOfTheCase,
     cases: cases
   }).then(cases => {
@@ -129,10 +144,11 @@ app.post("/cases", function(req, res) {
   });
 });
 app.get("/get-cases", (req, res) => {
-  var cases = req.body.cases;
+  var lawyer = req.body.lawyer;
   Cases.find({})
     .then(function(Cases) {
-      return res.send(Cases);
+
+      return res.send(Cases );
     })
     .catch(function(err) {
       return res.send({ error: "Server Error" });

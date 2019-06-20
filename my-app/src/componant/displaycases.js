@@ -40,7 +40,7 @@ class displaycases extends React.Component {
       <div class="grid-container">
         {this.state.Cases.map(cas => (
           <div id="item1">
-              <NavLink>
+              <NavLink to ="user">
               <button>
             {cas.name}
         </button>
@@ -49,6 +49,11 @@ class displaycases extends React.Component {
         </br>
         {cas.phonNumber}
         <br>
+
+        </br>
+        {cas.lawyer}
+        <br>
+        
         </br>
         {cas.typeOfTheCase}
         <br>

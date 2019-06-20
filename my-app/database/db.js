@@ -1,9 +1,6 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true}) 
-
-
+mongoose.connect("mongodb://localhost:27017/myapp", { useNewUrlParser: true });
 
 // const db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));
@@ -13,9 +10,7 @@ mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true})
 // });
 //This For User Information YY
 const usersSchema = new Schema({
-
   username: { type: String, trim: true, required: true },
-  
 
   // email: {
   //   type: String,
@@ -34,58 +29,48 @@ const usersSchema = new Schema({
 
 //This Schema for USer Information about the car
 const lowSchema = new Schema({
-
   username: { type: String, required: true },
   password: { type: String },
   id: { type: Number },
-  phoneNumber: { type: Number, required: true },
-
+  phoneNumber: { type: Number, required: true }
 });
 
 const caseSchema = new Schema({
-  
-  
-  
-  name:{ type: String, required: true },
-  phonNumber:{ type: Number, required: true },
-  typeOfTheCase:{ type: String, required: true },
-  cases: { type: String, required: true },
- 
-
+  name: { type: String, required: true },
+  phonNumber: { type: Number, required: true },
+  lawyer: { type: String, required: true },
+  typeOfTheCase: { type: String, required: true },
+  cases: { type: String, required: true }
 });
 
-
-const lowerSchema = new Schema ({
-  name : {type :String , required: true },
-  phoneNumber : { type : Number,required: true},
-  location : { type : String ,required: true},
-  graduateYear: {type:Number,required: true},
-  graduatUN:{type:String,required:true},
-
+const lowerSchema = new Schema({
+  name: { type: String, required: true },
+  phoneNumber: { type: Number, required: true },
+  location: { type: String, required: true },
+  graduateYear: { type: Number, required: true },
+  graduatUN: { type: String, required: true }
 });
 const displaySchema = new Schema({
-
   username: { type: String, required: true },
   password: { type: String },
   id: { type: Number },
-  phoneNumber: { type: Number, required: true },
-
+  phoneNumber: { type: Number, required: true }
 });
 
-const Display = mongoose.model('dis', displaySchema);
-const Users = mongoose.model('users', usersSchema);
-const Low = mongoose.model('low', lowSchema);
-const Lower = mongoose.model('lower', lowerSchema);
-const Cases = mongoose.model('cases', caseSchema);
+const Display = mongoose.model("dis", displaySchema);
+const Users = mongoose.model("users", usersSchema);
+const Low = mongoose.model("low", lowSchema);
+const Lower = mongoose.model("lower", lowerSchema);
+const Cases = mongoose.model("cases", caseSchema);
 
-const save = (obj,cb)=>{
-  var shop = new Shop(obj)
-  console.log('whaaaaatt')
-  shop.save((err,res)=>{
-    console.log("ERR",err,"RES",res)
-    cb(err,res)
-  })
-}
+const save = (obj, cb) => {
+  var shop = new Shop(obj);
+  console.log("whaaaaatt");
+  shop.save((err, res) => {
+    console.log("ERR", err, "RES", res);
+    cb(err, res);
+  });
+};
 module.exports.Users = Users;
 module.exports.save = save;
 module.exports.Low = Low;
