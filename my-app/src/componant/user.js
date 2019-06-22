@@ -28,8 +28,9 @@ class user extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <div>
+          <center>
+        <div class="grid-container">
+          <div id="item1">
             {this.state.Low.map(low => (
               <div>
                 {/* <NavLink> */}
@@ -50,6 +51,7 @@ class user extends React.Component {
             ))}
           </div>
         </div>
+        </center>
       </div>
     );
   }
