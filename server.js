@@ -1,10 +1,9 @@
 const express = require("express");
-
 const bodyParser = require("body-parser");
 const db = require("./my-app/database/db");
 const {
-  Users,
-  save,
+  // Users,
+  // save,
   Low,
   Lower,
   Cases,
@@ -22,36 +21,14 @@ const cors = require("cors");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-// app.get('*', (req,res) =>{
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
 
-// app.get("/a", (req, res) => {
-//   // console.log("motasem raggad");
-//   const motasem = [{ raggad: "motasem" }];
-
-//   res.json(motasem);
-// });
-
-// app.post("/tgo", (req, res) => {
-//   const username = req.body.username;
-//   const password = req.body.password;
-
-//   User.findOne({ username: username });
-//   res.send("raggad");
-// });
-
-// app.get("/signIn", function(req, res) {
-//   var shopname = req.body.shopname;
-//   // console.log(shopname);
-// });
-
+// post method for client signup and create datasor hem in the data base
 app.post("/reg-Client", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
-
+ // fuonction to creact the data comming from the client side 
   Low.create({
     username: username,
     password: password,
@@ -73,26 +50,24 @@ app.get("/cli-name", (req, res) => {
       return res.send({ error: "Server Error" });
     });
 });
-
+// post method for lowyer signup and create datasor hem in the data base
 app.post("/reg-Low", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
-  
-  
+
   Display.create({
     username: username,
     password: password,
     id: id,
     phoneNumber: phoneNumber
-    
   }).then(user2 => {
     // console.log(userrrr)
     res.send(user2);
   });
 });
-
+// add the info of the lower in list for client using 
 app.post("/lowInf", function(req, res) {
   var name = req.body.name;
   var phoneNumber = req.body.phoneNumber;
@@ -111,9 +86,9 @@ app.post("/lowInf", function(req, res) {
     res.send(lower);
   });
 });
-
+// bring all the name of the lowyer from database 
 app.get("/raggad", (req, res) => {
-  var name = req.body.name;
+  // var name = req.body.name; 
   Lower.find({})
     .then(function(Lower) {
       return res.send(Lower);
@@ -122,7 +97,7 @@ app.get("/raggad", (req, res) => {
       return res.send({ error: "Server Error" });
     });
 });
-
+// add the info of client and the casesof hem
 app.post("/cases", function(req, res) {
   const name = req.body.name;
   const phonNumber = req.body.phonNumber;
@@ -131,7 +106,7 @@ app.post("/cases", function(req, res) {
   const cases = req.body.cases;
   // console.log(cases);
   Cases.create({
-    name: name ,
+    name: name,
     phonNumber: phonNumber,
     lawyer: lawyer,
     typeOfTheCase: typeOfTheCase,
@@ -143,42 +118,47 @@ app.post("/cases", function(req, res) {
     console.log(cases);
   });
 });
+// bring the info of the client and the case of hem and display it for the lowyer 
 app.get("/get-cases", (req, res) => {
   var lawyer = req.body.lawyer;
   Cases.find({})
     .then(function(Cases) {
-
-      return res.send(Cases );
+      return res.send(Cases);
     })
     .catch(function(err) {
       return res.send({ error: "Server Error" });
     });
 });
+
+//sign in check for the client 
 app.post("/sign-in-low", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
-
+ // find just the user name and the password from the data base and commper it with the sign in info the user write 
   Display.findOne({ username }, function(err, user) {
+// if the is any error return this error 
     if (err) {
       // console.error(err);
       res.status(500).json({
         error: "Internal error please try again"
       });
+      // if the user name is ronge return this error
     } else if (!user) {
       res.status(401).json({
         error: "Incorrect username or password"
       });
+      //else match this 200 with frontend and enter the page
     } else {
       // console.log(user)
       res.sendStatus(200);
     }
   });
 });
-
+// check of the info of user { user name and password} 
 app.post("/users", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
-
+ //ckeck the info from the loe schema if exist or not  
   Low.findOne({ username }, function(err, user) {
     if (err) {
       // console.error(err);
@@ -196,6 +176,7 @@ app.post("/users", (req, res) => {
   });
 });
 
+//  make the app listen for the port and if the port not work find anther port not using 
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
 });
