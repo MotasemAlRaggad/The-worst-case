@@ -5,12 +5,45 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
-class Home extends React.Component {
+class HomePage extends React.Component {
 
   
   render() {
     return (
       <div>
+{/* 
+        <header class="header_area">
+  
+    <div class="main_menu"  >
+      <nav class="navbar navbar-expand-lg navbar-light">
+         
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+      <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item active"><a class="nav-link" href="/HomePage">Home</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/signIn">Client Page</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/signInLow">Lower Page</a>
+              <li class="nav-item submenu dropdown" />
+                
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
+                </ul>
+							</li>
+              
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header> */}
  
   <section class="hero-banner">
     <div class="hero-banner__content text-center">
@@ -380,4 +413,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default HomePage;

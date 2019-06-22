@@ -84,6 +84,15 @@ class signIn extends React.Component {
           <button>signUpClient</button>
         </NavLink>
         </form>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
+        <img id="img"
+                    src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2kuOEWwdbRppq3E6ZSKwqZIsZYvzXcFKaqU01Knug4Fg8JAxD"
+                  />
         </center>
       </div>
     );

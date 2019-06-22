@@ -41,7 +41,7 @@ class displaycases extends React.Component {
         {this.state.Cases.map(cas => (
           <div id="item1">
               <NavLink to ="user">
-              <button>
+              <button class="button">
             {cas.name}
         </button>
         </NavLink>

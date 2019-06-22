@@ -20,18 +20,43 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 5px;
-  background-color : #a02610;
+  background-color : #4d1108;
   padding: 50px;
 }
 .grid-container > div {
-  background-color: black(255, 255, 255, 0.8);
+  background-color: #d8b2ac(255, 255, 255, 0.8);
   text-align: center;
   padding: 150px ;
-  font-size: 30px;
+  font-size: 25px;
 }
+.button {
+  background-color: #f4511e;
+  border: none;
+  color: #080808;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {opacity: 0}
+
+
 #item1 {
   grid-row: 0/ span 10;
 }
+
+/* #img {
+
+  width: 200;
+  height: 4000;
+} */
 
 .App-header {
   background-color: #282c34;

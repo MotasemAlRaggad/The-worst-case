@@ -41,7 +41,7 @@ class lowaer extends React.Component {
           
           <div id="item1">
              <NavLink to="cases">
-            <button>
+            <button class="button">
             {low.name} 
             </button>
             </NavLink>
