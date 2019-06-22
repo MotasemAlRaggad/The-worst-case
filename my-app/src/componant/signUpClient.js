@@ -11,7 +11,6 @@ class signUpClient extends React.Component {
     super(props);
 
     this.state = {
-       
       username: "",
       password: "",
       id: "",
@@ -81,13 +80,19 @@ class signUpClient extends React.Component {
               />
 
               <br />
-              
-                <button onClick={this.onclick.bind(this)}>sign Up</button>
-              
+
+              <button onClick={this.onclick.bind(this)}>sign Up</button>
             </center>
           </body>
         </form>
-
+        <section class="hero-banner">
+          <div class="hero-banner__content text-center">
+            <h1>We Well Understand Your Intention</h1>
+            <a class="button" href="#">
+              Make an Appoinment
+            </a>
+          </div>
+        </section>
       </div>
     );
   }

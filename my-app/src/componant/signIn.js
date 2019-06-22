@@ -49,50 +49,52 @@ class signIn extends React.Component {
     return (
       <div>
         <center>
+          <form onSubmit={this.onSubmit}>
+            <body>
+              <center>
+                <input
+                  value={this.state.username}
+                  label="username"
+                  type="text"
+                  placeholder="username"
+                  onChange={this.handleInputChange.bind(this)}
+                  name="username"
+                />
+                <br />
 
-        
+                <input
+                  value={this.state.password}
+                  label="password"
+                  type="text"
+                  placeholder="password"
+                  onChange={this.handleInputChange.bind(this)}
+                  name="password"
+                />
+                <br />
+                <input type="submit" value="Submit" />
+              </center>
+            </body>
 
-        
-        <form onSubmit={this.onSubmit}>
-          <body >
-            <center>
-              <input
-                value={this.state.username}
-                label="username"
-                type="text"
-                placeholder="username"
-                onChange={this.handleInputChange.bind(this)}
-                name="username"
-              />
-              <br />
+            <NavLink to="/signUpClient">
+              <button>signUpClient</button>
+            </NavLink>
+          </form>
+          <br />
+          <br />
+          <br />
+          <img
+            id="img"
+            src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2kuOEWwdbRppq3E6ZSKwqZIsZYvzXcFKaqU01Knug4Fg8JAxD"
+          />
 
-              <input
-                value={this.state.password}
-                label="password"
-                type="text"
-                placeholder="password"
-                onChange={this.handleInputChange.bind(this)}
-                name="password"
-              />
-              <br>
-              </br>
-              <input type="submit" value="Submit" />
-            </center>
-          </body>
-          
-          <NavLink to="/signUpClient">
-          <button>signUpClient</button>
-        </NavLink>
-        </form>
-        <br>
-        </br>
-        <br>
-        </br>
-        <br>
-        </br>
-        <img id="img"
-                    src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2kuOEWwdbRppq3E6ZSKwqZIsZYvzXcFKaqU01Knug4Fg8JAxD"
-                  />
+          <section class="hero-banner">
+            <div class="hero-banner__content text-center">
+              <h1>We Well Understand Your Intention</h1>
+              <a class="button" href="#">
+                Make an Appoinment
+              </a>
+            </div>
+          </section>
         </center>
       </div>
     );
