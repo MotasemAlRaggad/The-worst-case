@@ -32,7 +32,9 @@ const lowSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String },
   id: { type: Number },
-  phoneNumber: { type: Number, required: true }
+  phoneNumber: { type: Number, required: true },
+  url: { type: String}
+   
 });
  // schema info for to insart the cases and the info related for client
 const caseSchema = new Schema({
@@ -48,7 +50,8 @@ const lowerSchema = new Schema({
   phoneNumber: { type: Number, required: true },
   location: { type: String, required: true },
   graduateYear: { type: Number, required: true },
-  graduatUN: { type: String, required: true }
+  graduatUN: { type: String, required: true },
+  url: { type: String}
 });
 // schema for display the info of the clients and them cases 
 const displaySchema = new Schema({

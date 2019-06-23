@@ -12,7 +12,7 @@ import signIn from "./componant/signIn";
 import signUpClient from "./componant/signUpClient";
 import signUp from "./componant/signUp";
 // import signUpclient from "./componant/signUpClient";
-import lowerInf from "./componant/lowerInf";
+import lowerInf from "./componant/info/lowerInf";
 // import Header from "./componant/Header";
 // import footer from "./componant/footer";
 import lowaer from "./componant/lowaer";
@@ -21,6 +21,8 @@ import displaycases from "./componant/displaycases";
 import signInLow from "./componant/signIn-low";
 import singUplow from "./componant/signUpLow";
 import user from "./componant/user";
+import imageupload from "./componant/img/imageupload";
+
 
 import "./App.css";
 
@@ -53,6 +55,7 @@ class App extends React.Component {
           <Route path="/signInLow" component={signInLow} />
           <Route path="/singUplow" component={singUplow} />
           <Route path="/user" component={user} />
+          <Route path="/imageupload" component={imageupload} />
           
         </Router>
       </div>

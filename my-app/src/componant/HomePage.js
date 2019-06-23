@@ -11,6 +11,11 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
+        <NavLink to="imageupload">
+        <button>  
+          uplo
+        </button>
+        </NavLink>
 {/* 
         <header class="header_area">
   

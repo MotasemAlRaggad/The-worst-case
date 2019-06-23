@@ -28,12 +28,17 @@ app.post("/reg-Client", function(req, res) {
   var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
+  var phoneNumber = req.body.phoneNumber;
+  var url = req.body.url;
+  
+  
  // fuonction to creact the data comming from the client side 
   Low.create({
     username: username,
     password: password,
     id: id,
-    phoneNumber: phoneNumber
+    phoneNumber: phoneNumber,
+    url: url
   }).then(userrrr => {
     // console.log(userrrr)
     res.send(userrrr);
@@ -74,13 +79,15 @@ app.post("/lowInf", function(req, res) {
   var location = req.body.location;
   var graduateYear = req.body.graduateYear;
   var graduatUN = req.body.graduatUN;
-
+  var url = req.body.url;
+  
   Lower.create({
     name: name,
     phoneNumber: phoneNumber,
     location: location,
     graduateYear: graduateYear,
-    graduatUN: graduatUN
+    graduatUN: graduatUN,
+    url: url
   }).then(lower => {
     // console.log(userrrr)
     res.send(lower);
