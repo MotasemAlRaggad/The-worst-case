@@ -42,7 +42,8 @@ const caseSchema = new Schema({
   phonNumber: { type: Number, required: true },
   lawyer: { type: String, required: true },
   typeOfTheCase: { type: String, required: true },
-  cases: { type: String, required: true }
+  cases: { type: String, required: true },
+  url: { type: String}
 });
 // lawwer sign up info 
 const lowerSchema = new Schema({

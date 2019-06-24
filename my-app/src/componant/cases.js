@@ -1,5 +1,5 @@
 import React from "react";
-
+import { storage } from "./firebase";
 class cases extends React.Component {
   constructor(props) {
     super(props);
@@ -7,11 +7,45 @@ class cases extends React.Component {
     this.state = {
       name: "",
       phonNumber: "",
-      lawyer:"",
+      lawyer: "",
       typeOfTheCase: "",
-      cases: ""
+      cases: "",
+      image: null,
+      url: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChange1 = this.handleChange1.bind(this);
   }
+  handleChange(e) {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      this.setState(() => ({ image }));
+    }
+  }
+
+  handleUpload() {
+    const { image } = this.state;
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      `state_changed`,
+      snapshot => {},
+      error => {},
+      () => {
+        storage
+          .ref(`images`)
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            this.setState({ url });
+            // console.log(url)
+          });
+      }
+    );
+  }
+  changed(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
   onclick() {
     console.log("data hear");
     fetch("http://localhost:5000/cases", {
@@ -21,7 +55,7 @@ class cases extends React.Component {
     }).then(res => {});
   }
 
-  handleChange(e) {
+  handleChange1(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   render() {
@@ -37,7 +71,7 @@ class cases extends React.Component {
           <input
             type="text"
             value={this.state.name}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange1.bind(this)}
             name="name"
           />
           <br />
@@ -45,7 +79,7 @@ class cases extends React.Component {
           <input
             type="text"
             value={this.state.phonNumber}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange1.bind(this)}
             name="phonNumber"
           />
 
@@ -54,7 +88,7 @@ class cases extends React.Component {
           <input
             type="text"
             value={this.state.lawyer}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange1.bind(this)}
             name="lawyer"
           />
           <br />
@@ -62,7 +96,7 @@ class cases extends React.Component {
           <input
             type="text"
             value={this.state.typeOfTheCase}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange1.bind(this)}
             name="typeOfTheCase"
           />
           <br />
@@ -71,11 +105,32 @@ class cases extends React.Component {
             id="form"
             type="text"
             value={this.state.cases}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange1.bind(this)}
             name="cases"
           />
           <br />
           <br />
+          <br />
+          <br />
+          <p>you can uplaod file for your case
+                   
+          </p>
+
+          <br />
+          <input
+              type="file"
+              name="image"
+              onChange={this.handleChange}
+              
+            />
+          <br />
+          <button onClick={this.handleUpload.bind(this)}>Upload</button>
+          <img
+            src={this.state.url || "https://via.placeholder.com/150"}
+            alt="uploaded image"
+            height="150"
+            width="200"
+          />
 
           <button onClick={this.onclick.bind(this)}>submit</button>
         </center>

@@ -45,6 +45,7 @@ class lowaer extends React.Component {
               <img
                 src={low.url || "https://via.placeholder.com/200"}
                 alt="uploaded image"
+                id="size"
               />
               <br />
               {low.phoneNumber}

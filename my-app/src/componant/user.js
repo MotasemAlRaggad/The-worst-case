@@ -36,10 +36,12 @@ class user extends React.Component {
                 {/* <NavLink> */}
                 <button>
                   {low.username}
+
                   <img
-                    src="            https://scontent.famm6-1.fna.fbcdn.net/v/t1.0-9/32594133_789270281241893_4680588052748304384_n.jpg?_nc_cat=106&_nc_ht=scontent.famm6-1.fna&oh=cc29b0a7eca753c0f858f148c6aa20c9&oe=5D7EBF3F
-"
-                  />
+                src={low.url || "https://via.placeholder.com/200"}
+                alt="uploaded image"
+                id="size"
+              />
                 </button>
                 {/* </NavLink> */}
                 <br />

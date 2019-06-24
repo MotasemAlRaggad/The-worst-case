@@ -28,11 +28,9 @@ app.post("/reg-Client", function(req, res) {
   var password = req.body.password;
   var id = req.body.id;
   var phoneNumber = req.body.phoneNumber;
-  var phoneNumber = req.body.phoneNumber;
   var url = req.body.url;
-  
-  
- // fuonction to creact the data comming from the client side 
+
+  // fuonction to creact the data comming from the client side
   Low.create({
     username: username,
     password: password,
@@ -72,7 +70,7 @@ app.post("/reg-Low", function(req, res) {
     res.send(user2);
   });
 });
-// add the info of the lower in list for client using 
+// add the info of the lower in list for client using
 app.post("/lowInf", function(req, res) {
   var name = req.body.name;
   var phoneNumber = req.body.phoneNumber;
@@ -80,7 +78,7 @@ app.post("/lowInf", function(req, res) {
   var graduateYear = req.body.graduateYear;
   var graduatUN = req.body.graduatUN;
   var url = req.body.url;
-  
+
   Lower.create({
     name: name,
     phoneNumber: phoneNumber,
@@ -93,9 +91,9 @@ app.post("/lowInf", function(req, res) {
     res.send(lower);
   });
 });
-// bring all the name of the lowyer from database 
+// bring all the name of the lowyer from database
 app.get("/raggad", (req, res) => {
-  // var name = req.body.name; 
+  // var name = req.body.name;
   Lower.find({})
     .then(function(Lower) {
       return res.send(Lower);
@@ -111,13 +109,15 @@ app.post("/cases", function(req, res) {
   var lawyer = req.body.lawyer;
   const typeOfTheCase = req.body.typeOfTheCase;
   const cases = req.body.cases;
+  var url = req.body.url;
   // console.log(cases);
   Cases.create({
     name: name,
     phonNumber: phonNumber,
     lawyer: lawyer,
     typeOfTheCase: typeOfTheCase,
-    cases: cases
+    cases: cases,
+    url: url
   }).then(cases => {
     // console.log(userrrr)
 
@@ -125,7 +125,7 @@ app.post("/cases", function(req, res) {
     console.log(cases);
   });
 });
-// bring the info of the client and the case of hem and display it for the lowyer 
+// bring the info of the client and the case of hem and display it for the lowyer
 app.get("/get-cases", (req, res) => {
   var lawyer = req.body.lawyer;
   Cases.find({})
@@ -137,13 +137,13 @@ app.get("/get-cases", (req, res) => {
     });
 });
 
-//sign in check for the client 
+//sign in check for the client
 app.post("/sign-in-low", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
- // find just the user name and the password from the data base and commper it with the sign in info the user write 
+  // find just the user name and the password from the data base and commper it with the sign in info the user write
   Display.findOne({ username }, function(err, user) {
-// if the is any error return this error 
+    // if the is any error return this error
     if (err) {
       // console.error(err);
       res.status(500).json({
@@ -161,11 +161,11 @@ app.post("/sign-in-low", (req, res) => {
     }
   });
 });
-// check of the info of user { user name and password} 
+// check of the info of user { user name and password}
 app.post("/users", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
- //ckeck the info from the loe schema if exist or not  
+  //ckeck the info from the loe schema if exist or not
   Low.findOne({ username }, function(err, user) {
     if (err) {
       // console.error(err);
@@ -183,7 +183,7 @@ app.post("/users", (req, res) => {
   });
 });
 
-//  make the app listen for the port and if the port not work find anther port not using 
+//  make the app listen for the port and if the port not work find anther port not using
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
 });

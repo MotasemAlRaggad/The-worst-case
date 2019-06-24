@@ -19,32 +19,36 @@ class signUpClient extends React.Component {
       url: ""
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChange1 = this.handleChange1.bind(this);
   }
-  handleChange(e){
-      if(e.target.files[0]){
-          const image =  e.target.files[0]
-          this.setState(()=>({image}))
-      }
+  handleChange(e) {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      this.setState(() => ({ image }));
+    }
   }
 
-  
-  
-  handleUpload(){
-  const {image} = this.state;
-  const uploadTask =  storage.ref(`images/${image.name}`).put(image);
-  uploadTask.on(`state_changed` ,
-   (snapshot)=>{
-      
-  } , (error)=>{
-  } , ()=>{
-      storage.ref(`images`).child(image.name).getDownloadURL().then(url=>{
-          this.setState({url})
-          console.log(url)
-      });
-  })
+  handleUpload() {
+    const { image } = this.state;
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      `state_changed`,
+      snapshot => {},
+      error => {},
+      () => {
+        storage
+          .ref(`images`)
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            this.setState({ url });
+            // console.log(url)
+          });
+      }
+    );
   }
   changed(e) {
-      this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   }
   onclick() {
     var data = this.state;
@@ -57,76 +61,79 @@ class signUpClient extends React.Component {
     });
   }
 
-  handleChange(e) {
+  handleChange1(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
     return (
       <div>
-        <form>
-          <body>
-            <center>
-              <input
-                value={this.state.username}
-                label="username"
-                type="text"
-                placeholder="username"
-                onChange={this.handleChange.bind(this)}
-                name="username"
-              />
-              <br />
+        <body>
+          <center>
+            <input
+              value={this.state.username}
+              label="username"
+              type="text"
+              placeholder="username"
+              onChange={this.handleChange1.bind(this)}
+              name="username"
+            />
+            <br />
 
-              <input
-                value={this.state.password}
-                label="password"
-                type="text"
-                placeholder="password"
-                onChange={this.handleChange.bind(this)}
-                name="password"
-              />
+            <input
+              value={this.state.password}
+              label="password"
+              type="text"
+              placeholder="password"
+              onChange={this.handleChange1.bind(this)}
+              name="password"
+            />
 
-              <br />
+            <br />
 
-              <input
-                value={this.state.workkinghours}
-                label="id"
-                type="text"
-                placeholder="id"
-                name="id"
-                onChange={this.handleChange.bind(this)}
-              />
+            <input
+              value={this.state.workkinghours}
+              label="id"
+              type="text"
+              placeholder="id"
+              name="id"
+              onChange={this.handleChange1.bind(this)}
+            />
 
-              <br />
+            <br />
 
-              <input
-                value={this.state.phoneNumbers}
-                label="phoneNumber"
-                type="text"
-                placeholder="PhoneNumber"
-                onChange={this.handleChange.bind(this)}
-                name="phoneNumber"
-              />
+            <input
+              value={this.state.phoneNumbers}
+              label="phoneNumber"
+              type="text"
+              placeholder="PhoneNumber"
+              onChange={this.handleChange1.bind(this)}
+              name="phoneNumber"
+            />
 
-              <br />
-              <div>
-                <input
-                  type="file"
-                  name="url"
-                  onChange={this.handleChange.bind(this)}
-                  value={this.state.url}
-                />
-                
-                <br />
-                <br />
-                <button onClick={this.handleUpload}>Upload</button>
-                <img src = {this.state.url || 'https://via.placeholder.com/150' } alt = "uploaded image" height = "150" width = "200" />
-              </div>
+            <br />
 
-              <button onClick={this.onclick.bind(this)}>sign Up</button>
-            </center>
-          </body>
-        </form>
+            <input
+              type="file"
+              name="image"
+              onChange={this.handleChange}
+              
+            />
+
+            <br />
+            <br />
+            <button onClick={this.handleUpload.bind(this)}>Upload</button>
+            <img
+              src={this.state.url || "https://via.placeholder.com/150"}
+              alt="uploaded image"
+              height="150"
+              width="200"
+            />
+
+            <button onClick={this.onclick.bind(this)}>sign Up</button>
+          </center>
+        </body>
+
         <section class="hero-banner">
           <div class="hero-banner__content text-center">
             <h1>We Well Understand Your Intention</h1>
