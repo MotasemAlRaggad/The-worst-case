@@ -14,8 +14,8 @@ class lowerInf extends React.Component {
         url: ""
       }
     ];
-   this.handleChange = this.handleChange.bind(this);
-   this.handleChange1 = this.handleChange1.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChange1 = this.handleChange1.bind(this);
     // this.handleUpload = this.handleUpload.bind(this);
   }
   handleChange(e) {
@@ -25,7 +25,6 @@ class lowerInf extends React.Component {
     }
   }
 
-  
   handleUpload() {
     const { image } = this.state;
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -68,71 +67,72 @@ class lowerInf extends React.Component {
   render() {
     return (
       <div>
-        
-          <center>
-            <input
-              value={this.state.name}
-              label="name"
-              type="text"
-              placeholder="name"
-              onChange={this.handleChange1.bind(this)}
-              name="name"
-            />
+        <center>
+          <input
+            value={this.state.name}
+            label="name"
+            type="text"
+            placeholder="name"
+            onChange={this.handleChange1.bind(this)}
+            name="name"
+          />
 
-            <input
-              value={this.state.phoneNumber}
-              label="phoneNumber"
-              type="text"
-              placeholder="phoneNumber"
-              onChange={this.handleChange1.bind(this)}
-              name="phoneNumber"
-            />
+          <input
+            value={this.state.phoneNumber}
+            label="phoneNumber"
+            type="text"
+            placeholder="phoneNumber"
+            onChange={this.handleChange1.bind(this)}
+            name="phoneNumber"
+          />
 
-            <input
-              value={this.state.location}
-              label="location"
-              type="text"
-              placeholder="location"
-              onChange={this.handleChange1.bind(this)}
-              name="location"
-            />
+          <input
+            value={this.state.location}
+            label="location"
+            type="text"
+            placeholder="location"
+            onChange={this.handleChange1.bind(this)}
+            name="location"
+          />
 
-             <input
-              value={this.state.graduateYear}
-              label="graduateYear"
-              type="text"
-              placeholder="graduateYear"
-              onChange={this.handleChange1.bind(this)}
-              name="graduateYear"
-            />
+          <input
+            value={this.state.graduateYear}
+            label="graduateYear"
+            type="text"
+            placeholder="graduateYear"
+            onChange={this.handleChange1.bind(this)}
+            name="graduateYear"
+          />
 
-             <input
-              value={this.state.graduatUN}
-              label="graduatUN"
-              type="text"
-              placeholder="graduatUN"
-              onChange={this.handleChange1.bind(this)}
-              name="graduatUN"
-            />
-<br />
-<br />
-<br />
-<br />
-<br />      
-<input type="file" name="image" onChange={this.handleChange} />
-        <br />
-        <br />
-        <button onClick={this.handleUpload.bind(this)}>Upload</button>
-        <img
-          src={this.state.url || "https://via.placeholder.com/150"}
-          alt="uploaded image"
-          height="150"
-          width="200"
-        />
-            
-            <button onClick={this.onclick.bind(this)}>sign Up</button>
-          </center>
-        
+          <input
+            value={this.state.graduatUN}
+            label="graduatUN"
+            type="text"
+            placeholder="graduatUN"
+            onChange={this.handleChange1.bind(this)}
+            name="graduatUN"
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <input type="file" name="image" onChange={this.handleChange} />
+          <br />
+          <br />
+          <button onClick={this.handleUpload.bind(this)}>Upload</button>
+          <img
+            src={this.state.url || "https://via.placeholder.com/150"}
+            alt="uploaded image"
+            height="150"
+            width="200"
+          />
+
+          <button onClick={this.onclick.bind(this)}>sign Up</button>
+        </center>
       </div>
     );
   }

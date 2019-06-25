@@ -133,7 +133,7 @@ class signUpClient extends React.Component {
             <button onClick={this.onclick.bind(this)}>sign Up</button>
           </center>
         </body>
-
+{/* 
         <section class="hero-banner">
           <div class="hero-banner__content text-center">
             <h1>We Well Understand Your Intention</h1>
@@ -141,7 +141,8 @@ class signUpClient extends React.Component {
               Make an Appoinment
             </a>
           </div>
-        </section>
+        </section> */}
+   
       </div>
     );
   }
