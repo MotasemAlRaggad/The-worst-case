@@ -165,7 +165,7 @@ iframe {
 }
 
 .hov1:hover {
-  color: #c87ef0;
+  color: #f4511e;
 }
 
 
@@ -218,11 +218,8 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: #e8519e;
-  background: -webkit-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: -o-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: -moz-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: linear-gradient(bottom, #e8519e, #c77ff2);
+  background: #f4511e;
+ 
   opacity: 0.8;
 }
 
