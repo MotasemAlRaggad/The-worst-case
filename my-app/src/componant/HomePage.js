@@ -261,7 +261,7 @@ class HomePage extends React.Component {
   {/* <!--================ Testimonial section end =================-->   */}
 
   {/* <!--================ Team section start =================-->   */}
-   {/* <section class="section-margin"> 
+   <section class="section-margin"> 
      <div class="container">
        <div class="section-intro text-center pb-65px">
          <h2 class="section-intro__title">Meet Our Attorneys</h2>
@@ -270,9 +270,10 @@ class HomePage extends React.Component {
        <div class="row">
          <div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
            <div class="card card-team">
-             <img class="card-img rounded-0" src="img/home/team1.png" alt=""/>
+             <img class="card-img rounded-0" src="./lawride-master/img/home/yousef.jpg" alt="" 
+               height = "250" width = "250"/>
              <div class="card-team__body text-center">
-               <h3><a href="#">James Barrel</a></h3>
+               <h3><a href="#">Yousef Alshabah </a></h3>
                <p>Personal Lawyer</p>
                <ul class="card-team__social">
                  <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -286,9 +287,10 @@ class HomePage extends React.Component {
 
          <div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
            <div class="card card-team">
-             <img class="card-img rounded-0" src="img/home/team2.png" alt="" />
+             <img class="card-img rounded-0" src="./lawride-master/img/home/seif.jpg" alt="" 
+               height = "250" width = "250"/>
              <div class="card-team__body text-center">
-               <h3><a href="#">Stephen Red</a></h3>
+               <h3><a href="#">Seif Miehiar</a></h3>
                <p>Personal Lawyer</p>
                <ul class="card-team__social">
                  <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -302,7 +304,8 @@ class HomePage extends React.Component {
 
          <div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
            <div class="card card-team">
-             <img class="card-img rounded-0" src="img/home/team3.png" alt=""/>
+             <img class="card-img rounded-0" src="./lawride-master/img/home/motasem..jpg" alt=""
+               height = "250" width = "250"/>
              <div class="card-team__body text-center">
                <h3><a href="#">Matmex Sogan</a></h3>
                <p>Personal Lawyer</p>
@@ -318,7 +321,8 @@ class HomePage extends React.Component {
 
          <div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
            <div class="card card-team">
-             <img class="card-img rounded-0" src="./lawride-master/img/home/team4.png" alt=""/>
+             <img class="card-img rounded-0" src="./lawride-master/img/home/team4.png" alt=""
+               height = "250" width = "250"/>
              <div class="card-team__body text-center">
                <h3><a href="#">Richar Male</a></h3>
                <p>Personal Lawyer</p>
@@ -338,15 +342,20 @@ class HomePage extends React.Component {
 
 
   {/* <!--================ Cta section start =================-->   */}
-   {/* <section class="section-padding--smaller cta-wrapper">
+   <section class="section-padding--smaller cta-wrapper">
      <div class="container">
        <div class="cta__content text-center">
          <h2>Free Case Evaluation</h2>
          <p>Female divided bearing rule one called said Beginning set you living above saw seasons void created fruitful third years god.</p>
-         <button class="button button-cta">Contact us Now</button>
+        
+        
+      <NavLink to="cases" >
+         <button   class="button button-cta">Contact us Now</button>
+         </NavLink>
+      
        </div>
      </div>
-   </section> */} 
+   </section> 
   {/* <!--================ Cta section end =================-->   */}
 
  {/*  */}

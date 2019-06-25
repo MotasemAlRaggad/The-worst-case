@@ -114,8 +114,11 @@ class lowerInf extends React.Component {
               onChange={this.handleChange1.bind(this)}
               name="graduatUN"
             />
-
-            
+<br />
+<br />
+<br />
+<br />
+<br />      
 <input type="file" name="image" onChange={this.handleChange} />
         <br />
         <br />
