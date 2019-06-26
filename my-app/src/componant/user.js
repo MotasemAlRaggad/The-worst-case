@@ -40,7 +40,8 @@ class user extends React.Component {
                   <img
                 src={low.url || "https://via.placeholder.com/200"}
                 alt="uploaded image"
-                id="size"
+                height="150"
+                width="200"
               />
                 </button>
                 {/* </NavLink> */}

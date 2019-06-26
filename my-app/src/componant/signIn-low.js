@@ -82,14 +82,7 @@ class signInLow extends React.Component {
           <button>signUpLower</button>
         </NavLink>
         </center>
-        <section class="hero-banner">
-            <div class="hero-banner__content text-center">
-              <h1>We Well Understand Your Intention</h1>
-              <a class="button" href="#">
-                Make an Appoinment
-              </a>
-            </div>
-          </section>
+       
       </div>
 
     );

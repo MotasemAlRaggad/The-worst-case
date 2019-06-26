@@ -17,6 +17,7 @@ class HomePage extends React.Component {
         </button>
         </NavLink>
 {/* 
+  
         <header class="header_area">
   
     <div class="main_menu"  >

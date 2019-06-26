@@ -25,6 +25,12 @@
   height: 50;
 }
 
+#button1{
+  font-size: 25px;
+  
+ 
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -32,12 +38,17 @@
   background-color : #4d1108;
   padding: 50px;
 }
+#style  {
+  background-image: url("gs://the-worst-case.appspot.com/images/motasem..jpg");
+  
+}
 .grid-container > div {
   background-color: #d8b2ac(255, 255, 255, 0.8);
   text-align: center;
   padding: 150px ;
   font-size: 25px;
 }
+
 .button {
   background-color: #f4511e;
   border: none;
@@ -90,3 +101,4 @@
     transform: rotate(360deg);
   }
 }
+
