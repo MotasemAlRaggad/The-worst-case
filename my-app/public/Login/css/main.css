@@ -205,7 +205,7 @@ iframe {
   background-position: center;
   background-size: cover;
   width: calc(100% - 520px);
-  position: relative;
+  position: sticky;
   z-index: 1;
 }
 
@@ -238,7 +238,7 @@ iframe {
    display: flex; 
   flex-wrap: wrap;
   position: relative;
-  right: 500px;
+  right: 5000px;
   /* justify-content: space-between; */
  
 }
@@ -264,7 +264,8 @@ iframe {
   position: relative;
   border-bottom: 2px solid #dbdbdb;
   margin-bottom: 45px;
-
+  
+  /* margin-right: 500px; */
 }
 
 .label-input100 {
@@ -410,7 +411,7 @@ iframe {
   
   bottom: -100% ;
   padding: 5 5px;
-  left: 50;
+  left: 100;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
