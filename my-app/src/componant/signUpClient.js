@@ -81,7 +81,7 @@ class signUpClient extends React.Component {
                   class="wrap-input100 validate-input"
                   data-validate="Name is required"
                 >
-                  <span class="label-input100">username</span>
+                  <span class="label-input100">FirstName</span>
                   <input
                     class="input100"
                     type="text"
@@ -96,12 +96,12 @@ class signUpClient extends React.Component {
                   class="wrap-input100 validate-input"
                   data-validate="Valid email is required: ex@abc.xyz"
                 >
-                  <span class="label-input100">password</span>
+                  <span class="label-input100">lastName</span>
                   <input
                     class="input100"
                     type="text"
                     name="password"
-                    placeholder="*************..."
+                    placeholder="lastName..."
                     value={this.state.password}
                     onChange={this.handleChange1.bind(this)}
                   />
@@ -111,13 +111,13 @@ class signUpClient extends React.Component {
                   class="wrap-input100 validate-input"
                   data-validate="Username is required"
                 >
-                  <span class="label-input100">id</span>
+                  <span class="label-input100">password</span>
                   <input
                     class="input100"
                     type="text"
                     name="id"
-                    placeholder="id..."
-                    value={this.state.workkinghours}
+                    placeholder="************..."
+                    value={this.state.id}
                     onChange={this.handleChange1.bind(this)}
                   />
                   <span class="focus-input100" />

@@ -61,32 +61,46 @@ class cases extends React.Component {
   render() {
     return (
       <div>
-        <center>
-          <section class="hero-banner">
+      
+          {/* <section class="hero-banner">
             <div class="hero-banner__content text-center">
               <h1>We Well Understand Your Intention</h1>
             </div>
-          </section>
+          </section> */}
+          <div>
+<div class="limiter">
+<div class="container-login100">
+  <div class="login100-more1" />
+    <center>
+    
+    
 
           <input
             type="text"
+            class="input100"
             value={this.state.name}
+            placeholder="username..."
             onChange={this.handleChange1.bind(this)}
             name="name"
+            
           />
           <br />
           <br />
           <input
             type="text"
+            class="input100"
             value={this.state.phonNumber}
             onChange={this.handleChange1.bind(this)}
             name="phonNumber"
+            placeholder="phonNumber..."
           />
 
           <br />
           <br />
           <input
             type="text"
+            placeholder="lawyer.Name.."
+            class="input100"
             value={this.state.lawyer}
             onChange={this.handleChange1.bind(this)}
             name="lawyer"
@@ -95,18 +109,23 @@ class cases extends React.Component {
           <br />
           <input
             type="text"
+
+            placeholder="TypeOfTheCase..."
+            class="input100"
             value={this.state.typeOfTheCase}
             onChange={this.handleChange1.bind(this)}
-            name="typeOfTheCase"
+            name="TypeOfTheCase"
           />
           <br />
           <br />
           <input
             id="form"
+            placeholder="you can write your case..."
             type="text"
             value={this.state.cases}
             onChange={this.handleChange1.bind(this)}
             name="cases"
+            class="input100"
           />
           <br />
           <br />
@@ -133,8 +152,14 @@ class cases extends React.Component {
           />
 
           <button onClick={this.onclick.bind(this)}>submit</button>
-        </center>
+      </center>
       </div>
+      </div>
+      
+      </div>
+       
+      </div>
+
     );
   }
 }

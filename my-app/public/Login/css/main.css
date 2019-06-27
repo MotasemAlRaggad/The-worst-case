@@ -192,8 +192,9 @@ iframe {
 
 .wrap-login100 {
   width: 520px;
-  min-height: 50vh;
-  background: #fff;
+  height: 200;
+  min-height: 25vh;
+  background: rgb(252, 248, 248);
   border-radius: 2px;
   position: relative;
 }
@@ -204,7 +205,7 @@ iframe {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: calc(100% - 520px);
+  width: calc(90% - 470px);
   position: sticky;
   z-index: 1;
 }
@@ -214,12 +215,39 @@ iframe {
   display: block;
   position: absolute;
   z-index: -1;
-  width: 70%;
+  width: 92%;
   height: 85%;
   top: 0;
   left: 100px;
-  background: #0c0c0c;
+  background: #fcfafa;
   background-image: url('https://www.misa.org.za/wp-content/uploads/2019/06/bigstock-Labor-Law-Lawyer-Legal-Busines-283352659.jpg');
+  opacity: 0.5;
+  -webkit-filter: grayscale(100%);filter: grayscale(100%);
+
+  filter: alpha(opacity=50);
+}
+
+
+.login100-more1 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: calc(90% - 470px);
+  position: sticky;
+  z-index: 1;
+}
+
+.login100-more1::before {
+  content: "";
+  /* display: block; */
+  position: absolute;
+  z-index: -1;
+  width: 91%;
+  height: 130%;
+  top: 0;
+  left: 100px;
+  background: #f8f6f6;
+  background-image: url('https://static1.bigstockphoto.com/1/3/2/large1500/231821146.jpg');
   opacity: 0.5;
   -webkit-filter: grayscale(100%);filter: grayscale(100%);
 
@@ -230,7 +258,8 @@ iframe {
 [ Form ]*/
 
 .login100-form {
-  width: 250%;
+  width: 300%;
+  
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -239,7 +268,7 @@ iframe {
   flex-wrap: wrap;
   position: relative;
   right: 5000px;
-  /* justify-content: space-between; */
+  justify-content: space-between;
  
 }
 
@@ -535,9 +564,10 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 
-@media (max-width: 576px) {
+@media (max-width: 900px) {
   .wrap-login100 {
     padding-left: 15px;
     padding-right: 15px;
+    
   }
 }

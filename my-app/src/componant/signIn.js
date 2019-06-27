@@ -53,7 +53,7 @@ class signIn extends React.Component {
 
           <div class="limiter">
             <div class="container-login100">
-              <div class="login100-more" />
+              <div class="login100-more1" />
 
               <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
                 {/* <form class="login100-form validate-form"> */}
@@ -90,16 +90,48 @@ class signIn extends React.Component {
                   />
                   <span class="focus-input100" />
                 </div>
-                <button onClick={this.onclick.bind(this)}  >sign In</button>
-								<br />
-          <br />
-                <NavLink to="/signUpClient">
-                  <button>signUpClient</button>
-                </NavLink>
+
+								<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+
+               
+                  <br />
+                  <br />
+                 
+                  <button onClick={this.onclick.bind(this)}
+                  id="button2"
+                  >SIGN In</button>
+
+
+
+                  </div>
+                  <br />
+                  <br />
+                  <div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+                  <NavLink to="/signUpClient">
+                    <button
+                    id="button1"
+                    
+                    >SIGN UP</button>
+                  </NavLink>
+                  
+                  </div>
+                  <br />
+                  <br />
+                  
+                  {/* <a */}
+                  {/* // href="#" */}
+                  {/* class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30" */}
+                  {/* > */}
+                  {/* Sign in */}
+                  {/* <i class="fa fa-long-arrow-right m-l-5" /> */}
+                  {/* </a> */}
+                </div>
               </div>
             </div>
           </div>
-
           <br />
           <br />
           <br />

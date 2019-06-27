@@ -22,7 +22,7 @@ class signInLow extends React.Component {
     });
   };
   // onclick
-  onSubmit = event => {
+  onclick = event => {
     event.preventDefault();
     fetch("http://localhost:5000/sign-in-low", {
       method: "POST",
@@ -48,42 +48,92 @@ class signInLow extends React.Component {
   render() {
     return (
       <div>
-        <center>
+      <div class="limiter">
+      <div class="container-login100">
+        <div class="login100-more1" />
 
-        <form onSubmit={this.onSubmit}>
-          <body>
-            <center>
-              <input
-                value={this.state.username}
-                label="username"
-                type="text"
-                placeholder="username"
-                onChange={this.handleInputChange.bind(this)}
-                name="username"
-              />
-              <br />
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+          {/* <form class="login100-form validate-form"> */}
+          <span class="login100-form-title p-b-59">Sign In</span>
 
-              <input
-                value={this.state.password}
-                label="password"
-                type="text"
-                placeholder="password"
-                onChange={this.handleInputChange.bind(this)}
-                name="password"
-              />
-              <br>
-              </br>
-              <input type="submit" value="Submit" />
-            </center>
-          </body>
-        </form>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <span class="label-input100">username</span>
+            <input
+              class="input100"
+              type="text"
+              name="username"
+              placeholder="username..."
+              value={this.state.username}
+              onChange={this.handleInputChange.bind(this)}
+            />
+            <span class="focus-input100" />
+          </div>
 
-        <NavLink to="/lowerInf">
-          <button>signUpLower</button>
-        </NavLink>
-        </center>
-       
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Valid email is required: ex@abc.xyz"
+          >
+            <span class="label-input100">password</span>
+            <input
+              class="input100"
+              type="text"
+              name="password"
+              placeholder="*************..."
+              value={this.state.password}
+              onChange={this.handleInputChange.bind(this)}
+            />
+            <span class="focus-input100" />
+          </div>
+
+          <div class="container-login100-form-btn">
+      <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+
+         
+            <br />
+            <br />
+           
+            <button onClick={this.onclick.bind(this)}
+            id="button1"
+            >SIGN In</button>
+
+
+
+            </div>
+            <br />
+            <br />
+            <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+            <NavLink to="/lowerInf">
+              <button
+              id="button1"
+              
+              >SIGN UP</button>
+            </NavLink>
+            
+            </div>
+            <br />
+            <br />
+            
+            {/* <a */}
+            {/* // href="#" */}
+            {/* class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30" */}
+            {/* > */}
+            {/* Sign in */}
+            {/* <i class="fa fa-long-arrow-right m-l-5" /> */}
+            {/* </a> */}
+          </div>
+        </div>
       </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    
+</div>
 
     );
   }

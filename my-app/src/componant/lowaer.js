@@ -6,7 +6,6 @@ import {
   NavLink
 } from "react-router-dom";
 
-
 class lowaer extends React.Component {
   constructor(props) {
     super(props);
@@ -34,34 +33,36 @@ class lowaer extends React.Component {
   render() {
     return (
       <body class="grid-container">
-      <div class="grid-container">
-        {this.state.Lower.map((low, i) => (
-          <ul key={i}>
-            <div id="item1">
-              <NavLink to="cases">
-                <button class="button">{low.name}</button>
-              </NavLink>
-              <br />
+        <div class="grid-container">
+          {this.state.Lower.map((low, i) => (
+            <ul key={i}>
+              <div id="item1">
+                <br />
 
-              
-              <img
-                src={low.url || "https://via.placeholder.com/200"}
-                alt="uploaded image"
-                id="size"
-                height = "250" width = "250"
-              />
-              <br />
-              {low.phoneNumber}
-              <br />
-              {low.location}
-              <b />
-              {low.graduateYear}
-              <br />
-              {low.graduatUN}
-            </div>
-          </ul>
-        ))}
-      </div>
+                <img
+                  src={low.url || "https://via.placeholder.com/200"}
+                  alt="uploaded image"
+                  id="size"
+                  height="250"
+                  width="250"
+                />
+                <br />
+                {low.phoneNumber}
+                <br />
+                {low.location}
+                <b />
+                {low.graduateYear}
+                <br />
+                {low.graduatUN}
+
+                <br />
+                <NavLink to="cases">
+                  <button class="button">{low.name}</button>
+                </NavLink>
+              </div>
+            </ul>
+          ))}
+        </div>
       </body>
     );
   }

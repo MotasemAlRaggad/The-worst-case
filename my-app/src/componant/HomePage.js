@@ -11,11 +11,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <NavLink to="imageupload">
-        <button>  
-          uplo
-        </button>
-        </NavLink>
+     
 {/* 
   
         <header class="header_area">
@@ -308,7 +304,7 @@ class HomePage extends React.Component {
              <img class="card-img rounded-0" src="./lawride-master/img/home/motasem..jpg" alt=""
                height = "250" width = "250"/>
              <div class="card-team__body text-center">
-               <h3><a href="#">Matmex Sogan</a></h3>
+               <h3><a href="#">Motasem AL-Raggad</a></h3>
                <p>Personal Lawyer</p>
                <ul class="card-team__social">
                  <li><a href="#"><i class="ti-facebook"></i></a></li>

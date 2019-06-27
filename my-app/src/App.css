@@ -10,54 +10,65 @@
 #form {
   width: 300px;
   height: 150px;
+  border-block-end: #0d0d0e;
+  padding: 10;
 }
 
- #Font{
-  font-size: 50px,
-  
-} 
+#Font {
+  font-size: 50px;
+  font-style: oblique;
+  /* font-weight: 900; */
+  font-weight: bold;
+  color: #de6320;
+}
 /* .container img {
   width: 100%;
   height: auto;
 } */
-#size{
+#size {
   width: 50;
   height: 50;
 }
 
-#button1{
+#button1 {
   font-size: 25px;
-  
- 
+  text-align: center;
 }
+
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 5px;
-  background-color : #4d1108;
-  padding: 50px;
+  background-color: #9c9c9c;
+  padding-left: 200;
+  padding: 100px;
+
+  height: 100%;
+  width: 100%;
+  height: auto;
 }
-#style  {
+#style {
   background-image: url("gs://the-worst-case.appspot.com/images/motasem..jpg");
-  
 }
 .grid-container > div {
   background-color: #d8b2ac(255, 255, 255, 0.8);
   text-align: center;
-  padding: 150px ;
+  padding: 10px;
   font-size: 25px;
+  height: 100%;
+  height: auto;
 }
 
 .button {
-  background-color: #f4511e;
+  background-color: #752a13;
   border: none;
-  color: #080808;
+  color: #f6f0f0;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
-  opacity: 0.6;
+  opacity: 5;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -65,11 +76,13 @@
   border-radius: 12px;
 }
 
-.button:hover {opacity: 0}
-
+.button:hover {
+  opacity: 1;
+  background-color: #881313;
+}
 
 #item1 {
-  grid-row: 0/ span 10;
+  grid-row: 0 / span 10;
 }
 
 /* #img {
@@ -101,4 +114,3 @@
     transform: rotate(360deg);
   }
 }
-
