@@ -47,7 +47,8 @@ class signIn extends React.Component {
 
   render() {
     return (
-      <div>
+     <center>
+     <div>
        
           
 
@@ -100,7 +101,7 @@ class signIn extends React.Component {
                   <br />
                  
                   <button onClick={this.onclick.bind(this)}
-                  id="button2"
+                  id="button1"
                   >SIGN In</button>
 
 
@@ -137,6 +138,7 @@ class signIn extends React.Component {
           <br />
         
       </div>
+      </center>
     );
   }
 }

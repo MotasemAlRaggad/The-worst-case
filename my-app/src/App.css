@@ -32,14 +32,18 @@
 
 #button1 {
   font-size: 25px;
-  text-align: center;
+  /* text-align: center; */
+  justify-content: center;
+}
+#root{
+  height: 100%;
 }
 
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 5px;
+  grid-template-columns: auto auto auto auto  auto auto;
+  grid-gap: 10px;
   background-color: #9c9c9c;
   padding-left: 200;
   padding: 100px;

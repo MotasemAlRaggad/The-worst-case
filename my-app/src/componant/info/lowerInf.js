@@ -72,7 +72,8 @@ class lowerInf extends React.Component {
 
   render() {
     return (
-      <div>
+     <center>
+     <div>
        <center>
 <div>
   
@@ -249,6 +250,7 @@ class lowerInf extends React.Component {
 </div>
 </center>
       </div>
+      </center>
     );
   }
 }

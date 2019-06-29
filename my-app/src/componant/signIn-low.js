@@ -47,6 +47,7 @@ class signInLow extends React.Component {
 
   render() {
     return (
+      <center>
       <div>
       <div class="limiter">
       <div class="container-login100">
@@ -134,7 +135,7 @@ class signInLow extends React.Component {
     <br />
     
 </div>
-
+</center>
     );
   }
 }

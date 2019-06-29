@@ -70,7 +70,7 @@ class cases extends React.Component {
           <div>
 <div class="limiter">
 <div class="container-login100">
-  <div class="login100-more1" />
+  <div class="login100-more2" />
     <center>
     
     
